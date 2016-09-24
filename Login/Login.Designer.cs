@@ -34,11 +34,13 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.BIniciarSesion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.CBMostrarContraseña = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBFondoLogin)).BeginInit();
             this.SuspendLayout();
             // 
             // PBFondoLogin
             // 
+            this.PBFondoLogin.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.PBFondoLogin.Image = ((System.Drawing.Image)(resources.GetObject("PBFondoLogin.Image")));
             this.PBFondoLogin.Location = new System.Drawing.Point(3, 3);
             this.PBFondoLogin.Name = "PBFondoLogin";
@@ -48,39 +50,44 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox1.CausesValidation = false;
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.AntiqueWhite;
-            this.textBox1.Location = new System.Drawing.Point(96, 98);
+            this.textBox1.ForeColor = System.Drawing.Color.Silver;
+            this.textBox1.Location = new System.Drawing.Point(96, 104);
             this.textBox1.MaxLength = 15;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(219, 32);
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "Usuario";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(96, 170);
+            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.Silver;
+            this.textBox2.Location = new System.Drawing.Point(96, 171);
             this.textBox2.MaxLength = 12;
             this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(219, 31);
+            this.textBox2.Size = new System.Drawing.Size(219, 32);
             this.textBox2.TabIndex = 7;
             this.textBox2.Text = "Contraseña";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // BIniciarSesion
             // 
+            this.BIniciarSesion.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BIniciarSesion.Font = new System.Drawing.Font("Goudy Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BIniciarSesion.Location = new System.Drawing.Point(96, 247);
+            this.BIniciarSesion.Location = new System.Drawing.Point(96, 255);
             this.BIniciarSesion.Name = "BIniciarSesion";
             this.BIniciarSesion.Size = new System.Drawing.Size(219, 40);
             this.BIniciarSesion.TabIndex = 8;
             this.BIniciarSesion.Text = "Iniciar Sesion";
-            this.BIniciarSesion.UseVisualStyleBackColor = true;
+            this.BIniciarSesion.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -94,19 +101,31 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Iniciar Sesión";
             // 
-            // Form1
+            // CBMostrarContraseña
+            // 
+            this.CBMostrarContraseña.AutoSize = true;
+            this.CBMostrarContraseña.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBMostrarContraseña.Location = new System.Drawing.Point(134, 218);
+            this.CBMostrarContraseña.Name = "CBMostrarContraseña";
+            this.CBMostrarContraseña.Size = new System.Drawing.Size(137, 19);
+            this.CBMostrarContraseña.TabIndex = 10;
+            this.CBMostrarContraseña.Text = "Mostrar Contraseña";
+            this.CBMostrarContraseña.UseVisualStyleBackColor = true;
+            this.CBMostrarContraseña.CheckedChanged += new System.EventHandler(this.CBMostrarContraseña_CheckedChanged);
+            // 
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(417, 329);
+            this.Controls.Add(this.CBMostrarContraseña);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BIniciarSesion);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.PBFondoLogin);
-            this.Name = "Form1";
+            this.Name = "Login";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PBFondoLogin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -116,10 +135,11 @@
         #endregion
 
         private System.Windows.Forms.PictureBox PBFondoLogin;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button BIniciarSesion;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox CBMostrarContraseña;
     }
 }
 
