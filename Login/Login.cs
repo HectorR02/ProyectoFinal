@@ -17,13 +17,10 @@ namespace Login
         public Login()
         {
             InitializeComponent();
-            PBFondoLogin.SizeMode = PictureBoxSizeMode.StretchImage;
             label1.Parent = PBFondoLogin;
             label1.BackColor = Color.Transparent;
             CBMostrarContraseña.Parent = PBFondoLogin;
-            CBMostrarContraseña.BackColor = Color.Transparent;
-            //textBox2.opacity
-            
+            CBMostrarContraseña.BackColor = Color.Transparent;            
         }
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -80,6 +77,11 @@ namespace Login
             }
             else
                 textBox2.PasswordChar = '*';
+        }
+
+        private void BIniciarSesion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

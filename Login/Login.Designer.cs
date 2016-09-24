@@ -45,6 +45,7 @@
             this.PBFondoLogin.Location = new System.Drawing.Point(3, 3);
             this.PBFondoLogin.Name = "PBFondoLogin";
             this.PBFondoLogin.Size = new System.Drawing.Size(411, 325);
+            this.PBFondoLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBFondoLogin.TabIndex = 0;
             this.PBFondoLogin.TabStop = false;
             // 
@@ -54,7 +55,7 @@
             this.textBox1.CausesValidation = false;
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.Silver;
-            this.textBox1.Location = new System.Drawing.Point(96, 104);
+            this.textBox1.Location = new System.Drawing.Point(96, 97);
             this.textBox1.MaxLength = 15;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(219, 32);
@@ -68,7 +69,7 @@
             this.textBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.Color.Silver;
-            this.textBox2.Location = new System.Drawing.Point(96, 171);
+            this.textBox2.Location = new System.Drawing.Point(96, 163);
             this.textBox2.MaxLength = 12;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(219, 32);
@@ -80,24 +81,26 @@
             // BIniciarSesion
             // 
             this.BIniciarSesion.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BIniciarSesion.Font = new System.Drawing.Font("Goudy Old Style", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BIniciarSesion.Location = new System.Drawing.Point(96, 255);
+            this.BIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.BIniciarSesion.Font = new System.Drawing.Font("Goudy Old Style", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BIniciarSesion.Location = new System.Drawing.Point(96, 256);
             this.BIniciarSesion.Name = "BIniciarSesion";
-            this.BIniciarSesion.Size = new System.Drawing.Size(219, 40);
+            this.BIniciarSesion.Size = new System.Drawing.Size(219, 32);
             this.BIniciarSesion.TabIndex = 8;
             this.BIniciarSesion.Text = "Iniciar Sesion";
+            this.BIniciarSesion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BIniciarSesion.UseVisualStyleBackColor = false;
+            this.BIniciarSesion.Click += new System.EventHandler(this.BIniciarSesion_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Goudy Old Style", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(73, 18);
+            this.label1.Font = new System.Drawing.Font("Goudy Old Style", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(92, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 51);
+            this.label1.Size = new System.Drawing.Size(223, 43);
             this.label1.TabIndex = 9;
             this.label1.Text = "Iniciar Sesión";
             // 
@@ -105,7 +108,7 @@
             // 
             this.CBMostrarContraseña.AutoSize = true;
             this.CBMostrarContraseña.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBMostrarContraseña.Location = new System.Drawing.Point(134, 218);
+            this.CBMostrarContraseña.Location = new System.Drawing.Point(134, 213);
             this.CBMostrarContraseña.Name = "CBMostrarContraseña";
             this.CBMostrarContraseña.Size = new System.Drawing.Size(137, 19);
             this.CBMostrarContraseña.TabIndex = 10;
@@ -124,6 +127,9 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.PBFondoLogin);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(433, 368);
+            this.MinimumSize = new System.Drawing.Size(433, 368);
             this.Name = "Login";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.PBFondoLogin)).EndInit();
