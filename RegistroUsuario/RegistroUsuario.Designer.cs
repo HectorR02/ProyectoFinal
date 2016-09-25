@@ -82,6 +82,7 @@
             this.TBUsuario.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBUsuario.ForeColor = System.Drawing.Color.Silver;
             this.TBUsuario.Location = new System.Drawing.Point(107, 213);
+            this.TBUsuario.MaxLength = 12;
             this.TBUsuario.Name = "TBUsuario";
             this.TBUsuario.Size = new System.Drawing.Size(369, 29);
             this.TBUsuario.TabIndex = 3;
@@ -94,6 +95,7 @@
             this.TBPass.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBPass.ForeColor = System.Drawing.Color.Silver;
             this.TBPass.Location = new System.Drawing.Point(107, 293);
+            this.TBPass.MaxLength = 10;
             this.TBPass.Name = "TBPass";
             this.TBPass.Size = new System.Drawing.Size(369, 29);
             this.TBPass.TabIndex = 4;
@@ -106,6 +108,7 @@
             this.TBConfPass.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBConfPass.ForeColor = System.Drawing.Color.Silver;
             this.TBConfPass.Location = new System.Drawing.Point(107, 373);
+            this.TBConfPass.MaxLength = 10;
             this.TBConfPass.Name = "TBConfPass";
             this.TBConfPass.Size = new System.Drawing.Size(369, 29);
             this.TBConfPass.TabIndex = 5;
@@ -155,6 +158,7 @@
             this.CrearCuenta.TabIndex = 9;
             this.CrearCuenta.Text = "Crear Cuenta";
             this.CrearCuenta.UseVisualStyleBackColor = false;
+            this.CrearCuenta.Click += new System.EventHandler(this.CrearCuenta_Click);
             // 
             // Titulo
             // 

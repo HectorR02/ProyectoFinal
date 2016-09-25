@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Conexion1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,10 @@ namespace RegistroUsuario
 {
     public partial class RegistroUsuario : Form
     {
+        string sql;
         public RegistroUsuario()
         {
             InitializeComponent();
-
             Nombre.Parent = Usuario.Parent = Pass.Parent = ConfPass.Parent = Titulo.Parent = CBVerPass.Parent = PBFondo;
             Nombre.BackColor = Usuario.BackColor = Pass.BackColor = ConfPass.BackColor = Titulo.BackColor = CBVerPass.BackColor = Color.Transparent;
         }
@@ -115,6 +116,46 @@ namespace RegistroUsuario
                     TBnombre.Clear();
                     TBnombre.ForeColor = Color.Black;
                 }
+        }
+
+        private void CrearCuenta_Click(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrEmpty(TBnombre.Text) && !string.IsNullOrEmpty(TBUsuario.Text) && !string.IsNullOrEmpty(TBPass.Text) && !string.IsNullOrEmpty(TBConfPass.Text))
+            {
+                if (!TBnombre.Text.Equals("Ejemplo: Juan Perez") && !TBUsuario.Text.Equals("Ejemplo: juan02") && !TBPass.Text.Equals("Contraseña") && !TBConfPass.Text.Equals("Contraseña"))
+                {
+                    if (TBPass.Text.Equals(TBConfPass.Text))
+                    {
+                        Conexion con = new Conexion();
+                        sql = "INSERT INTO Usuario (Nombre,Usuario,Contraseña) values('" + TBnombre.Text + "','" + TBUsuario.Text + "','" + TBPass.Text + "')";
+                        MessageBox.Show(con.insertar(sql));
+                        TBnombre.Text = "Ejemplo: Juan Perez";
+                        TBUsuario.Text = "Ejemplo: juan02";
+                        TBPass.Text = "Contraseña";
+                        TBConfPass.Text = "Contraseña";
+                        TBnombre.ForeColor = TBPass.ForeColor = TBConfPass.ForeColor = TBUsuario.ForeColor = Color.Silver;
+                    }
+                    else
+                    {
+                        TBPass.Text = TBConfPass.Text = "Contraseña";
+                        TBPass.ForeColor = TBConfPass.ForeColor = Color.Silver;
+                        if (TBConfPass.PasswordChar == '*')
+                            TBPass.PasswordChar = TBConfPass.PasswordChar = '\0';
+                        TBPass.Focus();
+                        MessageBox.Show("Las contraseñas no son iguales\n\"Vuelve a Repetirlas\"");
+                    }
+                }
+                else
+                    if (TBnombre.Text.Equals("Ejemplo: Juan Perez"))
+                        TBnombre.Focus();
+                    else if (TBUsuario.Text.Equals("Ejemplo: juan02"))
+                            TBUsuario.Focus();
+                        else if (TBPass.Text.Equals("Contraseña"))
+                                TBPass.Focus();
+                            else if (TBConfPass.Text.Equals("Contraseña"))
+                                    TBConfPass.Focus();
+            }
+            
         }
     }
 }
