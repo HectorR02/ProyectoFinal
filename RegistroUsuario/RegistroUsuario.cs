@@ -34,7 +34,7 @@ namespace RegistroUsuario
             }
             else
                 if (Char.IsDigit(e.KeyChar) || Char.IsLetter(e.KeyChar))
-                if (TBUsuario.Text.Equals("Ejemplo: juan02"))
+                if (TBUsuario.Text.Equals("Ejemplo: juan02") || TBUsuario.ForeColor == Color.Silver)
                 {
                     TBUsuario.Clear();
                     TBUsuario.ForeColor = Color.Black;
@@ -56,7 +56,7 @@ namespace RegistroUsuario
             }
             else
                 if (Char.IsDigit(e.KeyChar) || Char.IsLetter(e.KeyChar))
-                if (TBPass.Text.Equals("Contraseña"))
+                if (TBPass.Text.Equals("Contraseña") || TBPass.ForeColor == Color.Silver)
                 {
                     TBPass.Clear();
                     TBPass.PasswordChar = '*';
@@ -79,7 +79,7 @@ namespace RegistroUsuario
             }
             else
                 if (Char.IsDigit(e.KeyChar) || Char.IsLetter(e.KeyChar))
-                if (TBConfPass.Text.Equals("Contraseña"))
+                if (TBConfPass.Text.Equals("Contraseña")|| TBConfPass.ForeColor == Color.Silver)
                 {
                     TBConfPass.Clear();
                     TBConfPass.PasswordChar = '*';
@@ -111,7 +111,7 @@ namespace RegistroUsuario
             }
             else
                 if (Char.IsDigit(e.KeyChar) || Char.IsLetter(e.KeyChar))
-                if (TBnombre.Text.Equals("Ejemplo: Juan Perez"))
+                if (TBnombre.Text.Equals("Ejemplo: Juan Perez") || TBnombre.ForeColor == Color.Silver)
                 {
                     TBnombre.Clear();
                     TBnombre.ForeColor = Color.Black;
@@ -146,7 +146,7 @@ namespace RegistroUsuario
                     }
                 }
                 else
-                    if (TBnombre.Text.Equals("Ejemplo: Juan Perez"))
+                    if (TBnombre.Text.Equals("Ejemplo: Juan Perez") || TBnombre.ForeColor == Color.Silver)
                         TBnombre.Focus();
                     else if (TBUsuario.Text.Equals("Ejemplo: juan02"))
                             TBUsuario.Focus();
