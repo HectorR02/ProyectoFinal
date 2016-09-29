@@ -1,13 +1,8 @@
-﻿using Conexion1;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
+using BLL;
 
 namespace RegistroUsuario
 {
@@ -126,14 +121,17 @@ namespace RegistroUsuario
                 {
                     if (TBPass.Text.Equals(TBConfPass.Text))
                     {
-                        Conexion con = new Conexion();
-                        sql = "INSERT INTO Usuario (Nombre,Usuario,Contraseña) values('" + TBnombre.Text + "','" + TBUsuario.Text + "','" + TBPass.Text + "')";
-                        MessageBox.Show(con.insertar(sql));
+                        Usuarios nuevo = new Usuarios();
+                        nuevo.Nombre = TBnombre.Text.Trim();
+                        nuevo.Usuario = TBUsuario.Text.Trim();
+                        nuevo.Contraseña = TBPass.Text.Trim();
+                        TBnombre.ForeColor = TBPass.ForeColor = TBConfPass.ForeColor = TBUsuario.ForeColor = Color.Silver;
                         TBnombre.Text = "Ejemplo: Juan Perez";
                         TBUsuario.Text = "Ejemplo: juan02";
                         TBPass.Text = "Contraseña";
                         TBConfPass.Text = "Contraseña";
-                        TBnombre.ForeColor = TBPass.ForeColor = TBConfPass.ForeColor = TBUsuario.ForeColor = Color.Silver;
+                        if (UsuariosBLL.Insertar(nuevo))
+                            MessageBox.Show("Se guardo Correctamente");
                     }
                     else
                     {
