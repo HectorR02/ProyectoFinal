@@ -121,17 +121,14 @@ namespace RegistroUsuario
                 {
                     if (TBPass.Text.Equals(TBConfPass.Text))
                     {
-                        Usuarios nuevo = new Usuarios();
-                        nuevo.Nombre = TBnombre.Text.Trim();
-                        nuevo.Usuario = TBUsuario.Text.Trim();
-                        nuevo.Contraseña = TBPass.Text.Trim();
+                        UsuariosBLL con = new UsuariosBLL();
+                        sql = "INSERT INTO Usuario (Nombre,Usuario,Contraseña) values('" + TBnombre.Text + "','" + TBUsuario.Text + "','" + TBPass.Text + "')";
                         TBnombre.ForeColor = TBPass.ForeColor = TBConfPass.ForeColor = TBUsuario.ForeColor = Color.Silver;
                         TBnombre.Text = "Ejemplo: Juan Perez";
                         TBUsuario.Text = "Ejemplo: juan02";
                         TBPass.Text = "Contraseña";
-                        TBConfPass.Text = "Contraseña";
-                        if (UsuariosBLL.Insertar(nuevo))
-                            MessageBox.Show("Se guardo Correctamente");
+                        TBConfPass.Text = "Contraseña";                        
+                        MessageBox.Show(con.insertar(sql));
                     }
                     else
                     {
