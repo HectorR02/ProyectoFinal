@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroUsuario));
-            this.PBFondo = new System.Windows.Forms.PictureBox();
             this.Nombre = new System.Windows.Forms.Label();
             this.TBnombre = new System.Windows.Forms.TextBox();
             this.TBUsuario = new System.Windows.Forms.TextBox();
@@ -38,26 +37,19 @@
             this.Usuario = new System.Windows.Forms.Label();
             this.Pass = new System.Windows.Forms.Label();
             this.ConfPass = new System.Windows.Forms.Label();
-            this.CrearCuenta = new System.Windows.Forms.Button();
             this.Titulo = new System.Windows.Forms.Label();
             this.CBVerPass = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.IdUsuario = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.TiposUsuario = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.Eliminar = new System.Windows.Forms.Button();
+            this.Buscar = new System.Windows.Forms.Button();
+            this.Guardar = new System.Windows.Forms.Button();
+            this.PBFondo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBFondo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // PBFondo
-            // 
-            this.PBFondo.Image = ((System.Drawing.Image)(resources.GetObject("PBFondo.Image")));
-            this.PBFondo.Location = new System.Drawing.Point(1, 1);
-            this.PBFondo.Name = "PBFondo";
-            this.PBFondo.Size = new System.Drawing.Size(631, 643);
-            this.PBFondo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBFondo.TabIndex = 0;
-            this.PBFondo.TabStop = false;
             // 
             // Nombre
             // 
@@ -72,51 +64,53 @@
             // TBnombre
             // 
             this.TBnombre.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TBnombre.Enabled = false;
             this.TBnombre.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBnombre.ForeColor = System.Drawing.Color.Silver;
             this.TBnombre.Location = new System.Drawing.Point(72, 181);
             this.TBnombre.Name = "TBnombre";
-            this.TBnombre.Size = new System.Drawing.Size(459, 29);
+            this.TBnombre.Size = new System.Drawing.Size(483, 29);
             this.TBnombre.TabIndex = 2;
             this.TBnombre.Text = "Ejemplo: Juan Perez";
             // 
             // TBUsuario
             // 
             this.TBUsuario.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TBUsuario.Enabled = false;
             this.TBUsuario.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBUsuario.ForeColor = System.Drawing.Color.Silver;
             this.TBUsuario.Location = new System.Drawing.Point(72, 261);
             this.TBUsuario.MaxLength = 12;
             this.TBUsuario.Name = "TBUsuario";
-            this.TBUsuario.Size = new System.Drawing.Size(459, 29);
+            this.TBUsuario.Size = new System.Drawing.Size(483, 29);
             this.TBUsuario.TabIndex = 3;
             this.TBUsuario.Text = "Ejemplo: juan02";
             // 
             // TBPass
             // 
             this.TBPass.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TBPass.Enabled = false;
             this.TBPass.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBPass.ForeColor = System.Drawing.Color.Silver;
             this.TBPass.Location = new System.Drawing.Point(72, 341);
             this.TBPass.MaxLength = 10;
             this.TBPass.Name = "TBPass";
-            this.TBPass.Size = new System.Drawing.Size(459, 29);
+            this.TBPass.Size = new System.Drawing.Size(483, 29);
             this.TBPass.TabIndex = 4;
             this.TBPass.Text = "Contraseña";
-//            this.TBPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // TBConfPass
             // 
             this.TBConfPass.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TBConfPass.Enabled = false;
             this.TBConfPass.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBConfPass.ForeColor = System.Drawing.Color.Silver;
             this.TBConfPass.Location = new System.Drawing.Point(72, 421);
             this.TBConfPass.MaxLength = 10;
             this.TBConfPass.Name = "TBConfPass";
-            this.TBConfPass.Size = new System.Drawing.Size(459, 29);
+            this.TBConfPass.Size = new System.Drawing.Size(483, 29);
             this.TBConfPass.TabIndex = 5;
             this.TBConfPass.Text = "Contraseña";
-           // this.TBConfPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // Usuario
             // 
@@ -148,21 +142,6 @@
             this.ConfPass.TabIndex = 8;
             this.ConfPass.Text = "Confirmar Contraseña";
             // 
-            // CrearCuenta
-            // 
-            this.CrearCuenta.BackColor = System.Drawing.Color.LightGray;
-            this.CrearCuenta.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
-            this.CrearCuenta.FlatAppearance.BorderSize = 0;
-            this.CrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CrearCuenta.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CrearCuenta.Location = new System.Drawing.Point(153, 583);
-            this.CrearCuenta.Name = "CrearCuenta";
-            this.CrearCuenta.Size = new System.Drawing.Size(152, 35);
-            this.CrearCuenta.TabIndex = 9;
-            this.CrearCuenta.Text = "Guardar";
-            this.CrearCuenta.UseVisualStyleBackColor = false;
-            this.CrearCuenta.Click += new System.EventHandler(this.CrearCuenta_Click);
-            // 
             // Titulo
             // 
             this.Titulo.AutoSize = true;
@@ -176,6 +155,7 @@
             // CBVerPass
             // 
             this.CBVerPass.AutoSize = true;
+            this.CBVerPass.Enabled = false;
             this.CBVerPass.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBVerPass.Location = new System.Drawing.Point(394, 387);
             this.CBVerPass.Name = "CBVerPass";
@@ -202,33 +182,21 @@
             this.IdUsuario.ForeColor = System.Drawing.Color.Silver;
             this.IdUsuario.Location = new System.Drawing.Point(72, 103);
             this.IdUsuario.Name = "IdUsuario";
-            this.IdUsuario.Size = new System.Drawing.Size(310, 29);
+            this.IdUsuario.Size = new System.Drawing.Size(340, 29);
             this.IdUsuario.TabIndex = 13;
             this.IdUsuario.Text = "Ejemplo: 0001";
             // 
-            // button1
+            // TiposUsuario
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::RegistroUsuario.Properties.Resources.BotonBusqueda1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(407, 103);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 34);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Buscar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(72, 495);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(459, 30);
-            this.comboBox1.TabIndex = 15;
+            this.TiposUsuario.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TiposUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TiposUsuario.Enabled = false;
+            this.TiposUsuario.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TiposUsuario.FormattingEnabled = true;
+            this.TiposUsuario.Location = new System.Drawing.Point(72, 495);
+            this.TiposUsuario.Name = "TiposUsuario";
+            this.TiposUsuario.Size = new System.Drawing.Size(483, 30);
+            this.TiposUsuario.TabIndex = 15;
             // 
             // label2
             // 
@@ -240,19 +208,101 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "Tipo de Usuario";
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.LightGray;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = global::RegistroUsuario.Properties.Resources.BotonAñadir;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(72, 562);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(125, 49);
+            this.button3.TabIndex = 18;
+            this.button3.Text = "Nuevo";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.BackColor = System.Drawing.Color.LightGray;
+            this.Eliminar.Enabled = false;
+            this.Eliminar.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
+            this.Eliminar.FlatAppearance.BorderSize = 0;
+            this.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Eliminar.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Eliminar.Image = global::RegistroUsuario.Properties.Resources.BotonCancelar;
+            this.Eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Eliminar.Location = new System.Drawing.Point(414, 562);
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Size = new System.Drawing.Size(141, 49);
+            this.Eliminar.TabIndex = 17;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Eliminar.UseVisualStyleBackColor = false;
+            this.Eliminar.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Buscar
+            // 
+            this.Buscar.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Buscar.Image = global::RegistroUsuario.Properties.Resources.BotonBusqueda1;
+            this.Buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscar.Location = new System.Drawing.Point(431, 103);
+            this.Buscar.Name = "Buscar";
+            this.Buscar.Size = new System.Drawing.Size(124, 34);
+            this.Buscar.TabIndex = 14;
+            this.Buscar.Text = "Buscar";
+            this.Buscar.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.Buscar.UseVisualStyleBackColor = true;
+            // 
+            // Guardar
+            // 
+            this.Guardar.BackColor = System.Drawing.Color.LightGray;
+            this.Guardar.Enabled = false;
+            this.Guardar.FlatAppearance.BorderColor = System.Drawing.Color.Orange;
+            this.Guardar.FlatAppearance.BorderSize = 0;
+            this.Guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Guardar.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Guardar.Image = global::RegistroUsuario.Properties.Resources.BotonGuardar1;
+            this.Guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Guardar.Location = new System.Drawing.Point(234, 562);
+            this.Guardar.Name = "Guardar";
+            this.Guardar.Size = new System.Drawing.Size(144, 49);
+            this.Guardar.TabIndex = 9;
+            this.Guardar.Text = "Guardar";
+            this.Guardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Guardar.UseVisualStyleBackColor = false;
+            this.Guardar.Click += new System.EventHandler(this.CrearCuenta_Click);
+            // 
+            // PBFondo
+            // 
+            this.PBFondo.Image = ((System.Drawing.Image)(resources.GetObject("PBFondo.Image")));
+            this.PBFondo.Location = new System.Drawing.Point(2, 1);
+            this.PBFondo.Name = "PBFondo";
+            this.PBFondo.Size = new System.Drawing.Size(619, 626);
+            this.PBFondo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBFondo.TabIndex = 0;
+            this.PBFondo.TabStop = false;
+            this.PBFondo.Click += new System.EventHandler(this.PBFondo_Click);
+            // 
             // RegistroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 644);
+            this.ClientSize = new System.Drawing.Size(620, 627);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.Eliminar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.TiposUsuario);
+            this.Controls.Add(this.Buscar);
             this.Controls.Add(this.IdUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CBVerPass);
             this.Controls.Add(this.Titulo);
-            this.Controls.Add(this.CrearCuenta);
+            this.Controls.Add(this.Guardar);
             this.Controls.Add(this.ConfPass);
             this.Controls.Add(this.Pass);
             this.Controls.Add(this.Usuario);
@@ -263,8 +313,10 @@
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.PBFondo);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(603, 566);
+            this.MaximumSize = new System.Drawing.Size(636, 666);
+            this.MinimumSize = new System.Drawing.Size(636, 666);
             this.Name = "RegistroUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Usuario";
             ((System.ComponentModel.ISupportInitialize)(this.PBFondo)).EndInit();
             this.ResumeLayout(false);
@@ -283,14 +335,16 @@
         private System.Windows.Forms.Label Usuario;
         private System.Windows.Forms.Label Pass;
         private System.Windows.Forms.Label ConfPass;
-        private System.Windows.Forms.Button CrearCuenta;
+        private System.Windows.Forms.Button Guardar;
         private System.Windows.Forms.Label Titulo;
         private System.Windows.Forms.CheckBox CBVerPass;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox IdUsuario;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button Buscar;
+        private System.Windows.Forms.ComboBox TiposUsuario;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Eliminar;
+        private System.Windows.Forms.Button button3;
     }
 }
 

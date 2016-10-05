@@ -63,16 +63,46 @@ namespace RegistroUsuario
                     }
                 }
                 else
-                    if (TBnombre.Text.Equals("Ejemplo: Juan Perez") || TBnombre.ForeColor == Color.Silver)
+                if (IdUsuario.Text.Equals("Ejemplo: 0001"))
+                    IdUsuario.Focus();
+                else if(TBnombre.Text.Equals("Ejemplo: Juan Perez") || TBnombre.ForeColor == Color.Silver)
                         TBnombre.Focus();
-                    else if (TBUsuario.Text.Equals("Ejemplo: juan02"))
-                            TBUsuario.Focus();
-                        else if (TBPass.Text.Equals("Contraseña"))
-                                TBPass.Focus();
-                            else if (TBConfPass.Text.Equals("Contraseña"))
-                                    TBConfPass.Focus();
+                      else if (TBUsuario.Text.Equals("Ejemplo: juan02"))
+                              TBUsuario.Focus();
+                           else if (TBPass.Text.Equals("Contraseña"))
+                                    TBPass.Focus();
+                                else if (TBConfPass.Text.Equals("Contraseña")) 
+                                        TBConfPass.Focus();
+                                  
             }
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PBFondo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            limpiarPantalla();
+        }
+
+        private void limpiarPantalla()
+        {
+            IdUsuario.ForeColor = TBnombre.ForeColor = TBPass.ForeColor = TBConfPass.ForeColor = TBUsuario.ForeColor = Color.Silver;
+            IdUsuario.Text = "Ejemplo: 0001";
+            TBnombre.Text = "Ejemplo: Juan Perez";
+            TBUsuario.Text = "Ejemplo: juan02";
+            TBPass.Text = "Contraseña";
+            TBConfPass.Text = "Contraseña";
+            if (!TBnombre.Enabled)
+                TBnombre.Enabled = TBUsuario.Enabled = TBPass.Enabled = TBConfPass.Enabled = Guardar.Enabled = Eliminar.Enabled = CBVerPass.Enabled = TiposUsuario.Enabled = true;
         }
     }
 }

@@ -126,6 +126,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>UsersDB.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\BotonCancelar.png" />
+    <None Include="Resources\BotonAñadir.png" />
+    <None Include="Resources\BotonGuardar1.png" />
     <None Include="Resources\BotonBusqueda1.png" />
   </ItemGroup>
   <ItemGroup>
