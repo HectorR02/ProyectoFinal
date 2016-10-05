@@ -41,6 +41,11 @@
             this.CrearCuenta = new System.Windows.Forms.Button();
             this.Titulo = new System.Windows.Forms.Label();
             this.CBVerPass = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.IdUsuario = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PBFondo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +54,7 @@
             this.PBFondo.Image = ((System.Drawing.Image)(resources.GetObject("PBFondo.Image")));
             this.PBFondo.Location = new System.Drawing.Point(1, 1);
             this.PBFondo.Name = "PBFondo";
-            this.PBFondo.Size = new System.Drawing.Size(585, 526);
+            this.PBFondo.Size = new System.Drawing.Size(631, 643);
             this.PBFondo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PBFondo.TabIndex = 0;
             this.PBFondo.TabStop = false;
@@ -58,7 +63,7 @@
             // 
             this.Nombre.AutoSize = true;
             this.Nombre.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombre.Location = new System.Drawing.Point(103, 97);
+            this.Nombre.Location = new System.Drawing.Point(68, 145);
             this.Nombre.Name = "Nombre";
             this.Nombre.Size = new System.Drawing.Size(76, 22);
             this.Nombre.TabIndex = 1;
@@ -69,57 +74,55 @@
             this.TBnombre.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.TBnombre.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBnombre.ForeColor = System.Drawing.Color.Silver;
-            this.TBnombre.Location = new System.Drawing.Point(107, 133);
+            this.TBnombre.Location = new System.Drawing.Point(72, 181);
             this.TBnombre.Name = "TBnombre";
-            this.TBnombre.Size = new System.Drawing.Size(369, 29);
+            this.TBnombre.Size = new System.Drawing.Size(459, 29);
             this.TBnombre.TabIndex = 2;
             this.TBnombre.Text = "Ejemplo: Juan Perez";
-            this.TBnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBnombre_KeyPress);
             // 
             // TBUsuario
             // 
             this.TBUsuario.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.TBUsuario.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBUsuario.ForeColor = System.Drawing.Color.Silver;
-            this.TBUsuario.Location = new System.Drawing.Point(107, 213);
+            this.TBUsuario.Location = new System.Drawing.Point(72, 261);
             this.TBUsuario.MaxLength = 12;
             this.TBUsuario.Name = "TBUsuario";
-            this.TBUsuario.Size = new System.Drawing.Size(369, 29);
+            this.TBUsuario.Size = new System.Drawing.Size(459, 29);
             this.TBUsuario.TabIndex = 3;
             this.TBUsuario.Text = "Ejemplo: juan02";
-            this.TBUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // TBPass
             // 
             this.TBPass.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.TBPass.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBPass.ForeColor = System.Drawing.Color.Silver;
-            this.TBPass.Location = new System.Drawing.Point(107, 293);
+            this.TBPass.Location = new System.Drawing.Point(72, 341);
             this.TBPass.MaxLength = 10;
             this.TBPass.Name = "TBPass";
-            this.TBPass.Size = new System.Drawing.Size(369, 29);
+            this.TBPass.Size = new System.Drawing.Size(459, 29);
             this.TBPass.TabIndex = 4;
             this.TBPass.Text = "Contraseña";
-            this.TBPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+//            this.TBPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // TBConfPass
             // 
             this.TBConfPass.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.TBConfPass.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBConfPass.ForeColor = System.Drawing.Color.Silver;
-            this.TBConfPass.Location = new System.Drawing.Point(107, 373);
+            this.TBConfPass.Location = new System.Drawing.Point(72, 421);
             this.TBConfPass.MaxLength = 10;
             this.TBConfPass.Name = "TBConfPass";
-            this.TBConfPass.Size = new System.Drawing.Size(369, 29);
+            this.TBConfPass.Size = new System.Drawing.Size(459, 29);
             this.TBConfPass.TabIndex = 5;
             this.TBConfPass.Text = "Contraseña";
-            this.TBConfPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
+           // this.TBConfPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // Usuario
             // 
             this.Usuario.AutoSize = true;
             this.Usuario.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Usuario.Location = new System.Drawing.Point(103, 176);
+            this.Usuario.Location = new System.Drawing.Point(68, 224);
             this.Usuario.Name = "Usuario";
             this.Usuario.Size = new System.Drawing.Size(74, 22);
             this.Usuario.TabIndex = 6;
@@ -129,7 +132,7 @@
             // 
             this.Pass.AutoSize = true;
             this.Pass.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pass.Location = new System.Drawing.Point(103, 256);
+            this.Pass.Location = new System.Drawing.Point(68, 304);
             this.Pass.Name = "Pass";
             this.Pass.Size = new System.Drawing.Size(105, 22);
             this.Pass.TabIndex = 7;
@@ -139,7 +142,7 @@
             // 
             this.ConfPass.AutoSize = true;
             this.ConfPass.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConfPass.Location = new System.Drawing.Point(103, 336);
+            this.ConfPass.Location = new System.Drawing.Point(68, 384);
             this.ConfPass.Name = "ConfPass";
             this.ConfPass.Size = new System.Drawing.Size(196, 22);
             this.ConfPass.TabIndex = 8;
@@ -152,11 +155,11 @@
             this.CrearCuenta.FlatAppearance.BorderSize = 0;
             this.CrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CrearCuenta.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CrearCuenta.Location = new System.Drawing.Point(107, 466);
+            this.CrearCuenta.Location = new System.Drawing.Point(153, 583);
             this.CrearCuenta.Name = "CrearCuenta";
-            this.CrearCuenta.Size = new System.Drawing.Size(369, 29);
+            this.CrearCuenta.Size = new System.Drawing.Size(152, 35);
             this.CrearCuenta.TabIndex = 9;
-            this.CrearCuenta.Text = "Crear Cuenta";
+            this.CrearCuenta.Text = "Guardar";
             this.CrearCuenta.UseVisualStyleBackColor = false;
             this.CrearCuenta.Click += new System.EventHandler(this.CrearCuenta_Click);
             // 
@@ -164,7 +167,7 @@
             // 
             this.Titulo.AutoSize = true;
             this.Titulo.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Titulo.Location = new System.Drawing.Point(167, 39);
+            this.Titulo.Location = new System.Drawing.Point(187, 20);
             this.Titulo.Name = "Titulo";
             this.Titulo.Size = new System.Drawing.Size(262, 36);
             this.Titulo.TabIndex = 10;
@@ -174,7 +177,7 @@
             // 
             this.CBVerPass.AutoSize = true;
             this.CBVerPass.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBVerPass.Location = new System.Drawing.Point(226, 425);
+            this.CBVerPass.Location = new System.Drawing.Point(394, 387);
             this.CBVerPass.Name = "CBVerPass";
             this.CBVerPass.Size = new System.Drawing.Size(137, 19);
             this.CBVerPass.TabIndex = 11;
@@ -182,11 +185,71 @@
             this.CBVerPass.UseVisualStyleBackColor = true;
             this.CBVerPass.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(68, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 22);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Id Usuario";
+            // 
+            // IdUsuario
+            // 
+            this.IdUsuario.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.IdUsuario.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IdUsuario.ForeColor = System.Drawing.Color.Silver;
+            this.IdUsuario.Location = new System.Drawing.Point(72, 103);
+            this.IdUsuario.Name = "IdUsuario";
+            this.IdUsuario.Size = new System.Drawing.Size(310, 29);
+            this.IdUsuario.TabIndex = 13;
+            this.IdUsuario.Text = "Ejemplo: 0001";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::RegistroUsuario.Properties.Resources.BotonBusqueda1;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(407, 103);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 34);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Buscar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(72, 495);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(459, 30);
+            this.comboBox1.TabIndex = 15;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(68, 461);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 22);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Tipo de Usuario";
+            // 
             // RegistroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(587, 527);
+            this.ClientSize = new System.Drawing.Size(634, 644);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.IdUsuario);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.CBVerPass);
             this.Controls.Add(this.Titulo);
             this.Controls.Add(this.CrearCuenta);
@@ -200,7 +263,6 @@
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.PBFondo);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(603, 566);
             this.MinimumSize = new System.Drawing.Size(603, 566);
             this.Name = "RegistroUsuario";
             this.Text = "Registro de Usuario";
@@ -224,6 +286,11 @@
         private System.Windows.Forms.Button CrearCuenta;
         private System.Windows.Forms.Label Titulo;
         private System.Windows.Forms.CheckBox CBVerPass;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox IdUsuario;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

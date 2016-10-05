@@ -12,75 +12,15 @@ namespace RegistroUsuario
         public RegistroUsuario()
         {
             InitializeComponent();
-            Nombre.Parent = Usuario.Parent = Pass.Parent = ConfPass.Parent = Titulo.Parent = CBVerPass.Parent = PBFondo;
-            Nombre.BackColor = Usuario.BackColor = Pass.BackColor = ConfPass.BackColor = Titulo.BackColor = CBVerPass.BackColor = Color.Transparent;
-        }
+            Utileria v = new Utileria(IdUsuario, "Ejemplo: juan02", TBnombre,"N");
+            Utileria v1 = new Utileria(TBnombre, "Ejemplo: Juan Perez", TBUsuario,"L");
+            Utileria v2 = new Utileria(TBUsuario, "Ejemplo: juan02", TBPass,"LN"); 
+            Utileria v3 = new Utileria(TBPass, "Ejemplo: juan02", TBConfPass, "Pass");
+            Utileria v4 = new Utileria(TBConfPass, "Ejemplo: juan02", IdUsuario, "Pass");
 
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                if (string.IsNullOrEmpty(TBUsuario.Text))
-                {
-                    TBUsuario.Text = "Ejemplo: juan02";
-                    TBUsuario.ForeColor = Color.Silver;
-                }
-                TBPass.Focus();
-            }
-            else
-                if (Char.IsDigit(e.KeyChar) || Char.IsLetter(e.KeyChar))
-                if (TBUsuario.Text.Equals("Ejemplo: juan02") || TBUsuario.ForeColor == Color.Silver)
-                {
-                    TBUsuario.Clear();
-                    TBUsuario.ForeColor = Color.Black;
-                }
-        }
-
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                if (string.IsNullOrEmpty(TBPass.Text))
-                {
-                    TBPass.Text = "Contraseña";
-                    TBPass.ForeColor = Color.Silver;
-                    if (TBPass.PasswordChar == '*')
-                        TBPass.PasswordChar = '\0';
-                }
-                TBConfPass.Focus();
-            }
-            else
-                if (Char.IsDigit(e.KeyChar) || Char.IsLetter(e.KeyChar))
-                if (TBPass.Text.Equals("Contraseña") || TBPass.ForeColor == Color.Silver)
-                {
-                    TBPass.Clear();
-                    TBPass.PasswordChar = '*';
-                    TBPass.ForeColor = Color.Black;
-                }
-        }
-
-        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                if (string.IsNullOrEmpty(TBConfPass.Text))
-                {
-                    TBConfPass.Text = "Contraseña";
-                    TBConfPass.ForeColor = Color.Silver;
-                    if (TBConfPass.PasswordChar == '*')
-                        TBConfPass.PasswordChar = '\0';
-                }
-                TBConfPass.Focus();
-            }
-            else
-                if (Char.IsDigit(e.KeyChar) || Char.IsLetter(e.KeyChar))
-                if (TBConfPass.Text.Equals("Contraseña")|| TBConfPass.ForeColor == Color.Silver)
-                {
-                    TBConfPass.Clear();
-                    TBConfPass.PasswordChar = '*';
-                    TBConfPass.ForeColor = Color.Black;
-                }
-        }
+            Nombre.Parent = Usuario.Parent = Pass.Parent = ConfPass.Parent = Titulo.Parent = CBVerPass.Parent = label2.Parent = label1.Parent = PBFondo;
+            Nombre.BackColor = Usuario.BackColor = Pass.BackColor = ConfPass.BackColor = Titulo.BackColor = CBVerPass.BackColor = label2.BackColor = label1.BackColor = Color.Transparent;
+        }        
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -93,25 +33,7 @@ namespace RegistroUsuario
                 TBPass.PasswordChar = TBConfPass.PasswordChar = '*';
         }
 
-        private void TBnombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                if (string.IsNullOrEmpty(TBnombre.Text))
-                {
-                    TBnombre.Text = "Ejemplo: Juan Perez";
-                    TBnombre.ForeColor = Color.Silver;
-                }
-                TBUsuario.Focus();
-            }
-            else
-                if (Char.IsDigit(e.KeyChar) || Char.IsLetter(e.KeyChar))
-                if (TBnombre.Text.Equals("Ejemplo: Juan Perez") || TBnombre.ForeColor == Color.Silver)
-                {
-                    TBnombre.Clear();
-                    TBnombre.ForeColor = Color.Black;
-                }
-        }
+        
 
         private void CrearCuenta_Click(object sender, EventArgs e)
         {

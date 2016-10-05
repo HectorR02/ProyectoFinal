@@ -41,5 +41,12 @@ namespace BLL
             }
             return resultado;
         }
+        public SqlDataReader consultar(String sql)
+        {
+            cmd = new SqlCommand(sql);
+            SqlDataReader datos = cmd.ExecuteReader();
+            cn.Close();
+            return datos;
+        }
     }
 }
