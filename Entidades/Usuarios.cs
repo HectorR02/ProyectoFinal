@@ -18,5 +18,7 @@ namespace Entidades
         public string Contraseña { get; set; }
 
         public string Tipo { get; set; }
+
+        public int Id { get; set; }
     }
 }

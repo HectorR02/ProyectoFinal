@@ -3,15 +3,18 @@ using System.Drawing;
 using System.Windows.Forms;
 using Entidades;
 using BLL;
+using System.Data.SqlClient;
 
 namespace RegistroUsuario
 {
     public partial class RegistroUsuario : Form
     {
         string sql;
+        UsuariosBLL con;
         public RegistroUsuario()
         {
             InitializeComponent();
+            cargarTipoUsuario();
             Utileria v = new Utileria(IdUsuario, "Ejemplo: juan02", TBnombre,"N");
             Utileria v1 = new Utileria(TBnombre, "Ejemplo: Juan Perez", TBUsuario,"L");
             Utileria v2 = new Utileria(TBUsuario, "Ejemplo: juan02", TBPass,"LN"); 
@@ -33,7 +36,42 @@ namespace RegistroUsuario
                 TBPass.PasswordChar = TBConfPass.PasswordChar = '*';
         }
 
-        
+        private void cargarUsuario()
+        {
+            con = new UsuariosBLL();
+            string SQL = "SELECT Id, Nombre, Usuario, Contraseña, Tipo_Usuario FROM Usuarios WHERE Id = "+ IdUsuario.Text;
+            SqlDataReader usuario = con.consultar(SQL);
+            if (usuario.Read())
+            {
+                limpiarPantalla();
+                IdUsuario.ForeColor = TBnombre.ForeColor = TBPass.ForeColor = TBConfPass.ForeColor = TBUsuario.ForeColor = Color.Black;
+                TBPass.PasswordChar = TBConfPass.PasswordChar = '*';
+
+
+                IdUsuario.Text = usuario.GetInt32(0).ToString();
+                TBnombre.Text = usuario.GetString(1);
+                TBUsuario.Text = usuario.GetString(2);
+                TBPass.Text = TBConfPass.Text = usuario.GetString(3);
+                TiposUsuario.SelectedItem = usuario.GetString(4);
+
+                con.cn.Close();
+            }
+            else
+                MessageBox.Show("-- Busqueda Fallida --\nNo se encontro el usuario");
+        }
+
+        private void cargarTipoUsuario()
+        {
+            string SQL = "SELECT Tipo_Usuario FROM TipoDeUsuario";
+            con = new UsuariosBLL();
+            SqlDataReader tipoUsuario = con.consultar(SQL);
+            TiposUsuario.Items.Add("Tipos de Usuario...");
+            while (tipoUsuario.Read())
+            {
+                TiposUsuario.Items.Add(tipoUsuario.GetString(0));
+            }
+            TiposUsuario.SelectedItem = "Tipos de Usuario...";
+        }
 
         private void CrearCuenta_Click(object sender, EventArgs e)
         {
@@ -44,7 +82,7 @@ namespace RegistroUsuario
                     if (TBPass.Text.Equals(TBConfPass.Text))
                     {
                         UsuariosBLL con = new UsuariosBLL();
-                        sql = "INSERT INTO Usuario (Nombre,Usuario,Contraseña) values('" + TBnombre.Text + "','" + TBUsuario.Text + "','" + TBPass.Text + "')";
+                        sql = "INSERT INTO Usuarios (Nombre,Usuario,Contraseña,Tipo_Usuario) values('" + TBnombre.Text + "','" + TBUsuario.Text + "','" + TBPass.Text + "','Administrador')";
                         TBnombre.ForeColor = TBPass.ForeColor = TBConfPass.ForeColor = TBUsuario.ForeColor = Color.Silver;
                         TBnombre.Text = "Ejemplo: Juan Perez";
                         TBUsuario.Text = "Ejemplo: juan02";
@@ -80,7 +118,10 @@ namespace RegistroUsuario
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            con = new UsuariosBLL();
+            string SQL = "DELETE FROM Usuarios WHERE Id =" + IdUsuario.Text;
+            MessageBox.Show(con.insertar(SQL));
+            limpiarPantalla();
         }
 
         private void PBFondo_Click(object sender, EventArgs e)
@@ -103,6 +144,20 @@ namespace RegistroUsuario
             TBConfPass.Text = "Contraseña";
             if (!TBnombre.Enabled)
                 TBnombre.Enabled = TBUsuario.Enabled = TBPass.Enabled = TBConfPass.Enabled = Guardar.Enabled = Eliminar.Enabled = CBVerPass.Enabled = TiposUsuario.Enabled = true;
+            if (TBPass.PasswordChar == '*')
+                TBPass.PasswordChar = TBConfPass.PasswordChar = '\0';
+            IdUsuario.Focus();
+        }
+
+        private void IdUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Buscar_Click(object sender, EventArgs e)
+        {            
+            cargarUsuario();
+            Guardar.Enabled = false;
         }
     }
 }

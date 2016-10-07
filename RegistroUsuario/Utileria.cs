@@ -59,7 +59,7 @@ namespace RegistroUsuario
                 siguiente.Focus();
             }
             else
-                if (Char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back)
+                if (char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space)
             {
                 if (caja.Text.Equals(Texto) || caja.ForeColor == Color.Silver)
                 {

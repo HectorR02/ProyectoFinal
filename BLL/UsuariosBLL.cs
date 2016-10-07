@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using Entidades;
 using DALL;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace BLL
 {
     public  class UsuariosBLL
     {
-        SqlConnection cn;
+        public SqlConnection cn;
         SqlCommand cmd;
         SqlDataReader dr;
 
@@ -19,12 +20,13 @@ namespace BLL
         {
             try
             {
-                cn = new SqlConnection("Data Source=.;Initial Catalog=Prueba;Integrated Security=True");
+                cn = new SqlConnection("Data source= HECTOR\\SQLEXPRESS;Initial Catalog=Granja_Huevos; User Id=sa; Password=20305952");
+                //cn = new SqlConnection(@"Data source=.;Initial Catalog=Granja_Huevos; Integrated security=true;");
                 cn.Open();
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
         }
         public string insertar(String sql)
@@ -43,10 +45,10 @@ namespace BLL
         }
         public SqlDataReader consultar(String sql)
         {
-            cmd = new SqlCommand(sql);
-            SqlDataReader datos = cmd.ExecuteReader();
-            cn.Close();
-            return datos;
+            cmd = new SqlCommand(sql,cn);
+            dr = cmd.ExecuteReader();
+            //cn.Close();
+            return dr;
         }
     }
 }

@@ -185,6 +185,7 @@
             this.IdUsuario.Size = new System.Drawing.Size(340, 29);
             this.IdUsuario.TabIndex = 13;
             this.IdUsuario.Text = "Ejemplo: 0001";
+            this.IdUsuario.TextChanged += new System.EventHandler(this.IdUsuario_TextChanged);
             // 
             // TiposUsuario
             // 
@@ -257,6 +258,7 @@
             this.Buscar.Text = "Buscar";
             this.Buscar.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.Buscar.UseVisualStyleBackColor = true;
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // Guardar
             // 
