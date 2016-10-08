@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Entidades;
-using BLL;
-using System.Data.SqlClient;
+using System.Data.Entity;
+using System.Linq;
+using ProyectoFinal.Data.Modelo;
+using ProyectoFinal.Data.Entidades;
+using ManejoDB;
 
 namespace RegistroUsuario
 {
     public partial class RegistroUsuario : Form
     {
-        string sql;
-        UsuariosBLL con;
+        ManipulacionDB MDB;
+        int tu = 0;
         public RegistroUsuario()
         {
             InitializeComponent();
-            cargarTipoUsuario();
+            Database.SetInitializer<FinalProyectDB>(new DropCreateDatabaseAlways<FinalProyectDB>());
             Utileria v = new Utileria(IdUsuario, "Ejemplo: juan02", TBnombre,"N");
             Utileria v1 = new Utileria(TBnombre, "Ejemplo: Juan Perez", TBUsuario,"L");
             Utileria v2 = new Utileria(TBUsuario, "Ejemplo: juan02", TBPass,"LN"); 
@@ -38,39 +40,21 @@ namespace RegistroUsuario
 
         private void cargarUsuario()
         {
-            con = new UsuariosBLL();
-            string SQL = "SELECT Id, Nombre, Usuario, Contraseña, Tipo_Usuario FROM Usuarios WHERE Id = "+ IdUsuario.Text;
-            SqlDataReader usuario = con.consultar(SQL);
-            if (usuario.Read())
-            {
-                limpiarPantalla();
-                IdUsuario.ForeColor = TBnombre.ForeColor = TBPass.ForeColor = TBConfPass.ForeColor = TBUsuario.ForeColor = Color.Black;
-                TBPass.PasswordChar = TBConfPass.PasswordChar = '*';
-
-
-                IdUsuario.Text = usuario.GetInt32(0).ToString();
-                TBnombre.Text = usuario.GetString(1);
-                TBUsuario.Text = usuario.GetString(2);
-                TBPass.Text = TBConfPass.Text = usuario.GetString(3);
-                TiposUsuario.SelectedItem = usuario.GetString(4);
-
-                con.cn.Close();
-            }
-            else
-                MessageBox.Show("-- Busqueda Fallida --\nNo se encontro el usuario");
+            MDB = new ManipulacionDB();
+            var user = new Usuarios( MDB.SearchUser(Convert.ToInt32(IdUsuario.Text)));
+            IdUsuario.Text = user.Id.ToString();
+            TBnombre.Text = user.Nombre;
+            TBUsuario.Text = user.Usuario;
+            TBConfPass.Text = TBPass.Text = user.Contraseña;
+            TiposUsuario.SelectedItem = user.Tipo_Usuario;
         }
 
         private void cargarTipoUsuario()
         {
-            string SQL = "SELECT Tipo_Usuario FROM TipoDeUsuario";
-            con = new UsuariosBLL();
-            SqlDataReader tipoUsuario = con.consultar(SQL);
-            TiposUsuario.Items.Add("Tipos de Usuario...");
-            while (tipoUsuario.Read())
-            {
-                TiposUsuario.Items.Add(tipoUsuario.GetString(0));
-            }
-            TiposUsuario.SelectedItem = "Tipos de Usuario...";
+            MDB = new ManipulacionDB();
+            TiposUsuario.DataSource = MDB.TypeUserList();
+            TiposUsuario.ValueMember = "Id";
+            TiposUsuario.DisplayMember = "Tipo_Usuario";
         }
 
         private void CrearCuenta_Click(object sender, EventArgs e)
@@ -81,14 +65,18 @@ namespace RegistroUsuario
                 {
                     if (TBPass.Text.Equals(TBConfPass.Text))
                     {
-                        UsuariosBLL con = new UsuariosBLL();
-                        sql = "INSERT INTO Usuarios (Nombre,Usuario,Contraseña,Tipo_Usuario) values('" + TBnombre.Text + "','" + TBUsuario.Text + "','" + TBPass.Text + "','Administrador')";
+                        MDB = new ManipulacionDB();
+                        MDB.AddUser(new Usuarios() { Id = Convert.ToInt32(IdUsuario.Text),
+                            Nombre = TBnombre.Text,
+                            Usuario = TBUsuario.Text,
+                            Contraseña = TBPass.Text,
+                            Tipo_Usuario = TiposUsuario.SelectedText
+                        });
                         TBnombre.ForeColor = TBPass.ForeColor = TBConfPass.ForeColor = TBUsuario.ForeColor = Color.Silver;
                         TBnombre.Text = "Ejemplo: Juan Perez";
                         TBUsuario.Text = "Ejemplo: juan02";
                         TBPass.Text = "Contraseña";
-                        TBConfPass.Text = "Contraseña";                        
-                        MessageBox.Show(con.insertar(sql));
+                        TBConfPass.Text = "Contraseña";    
                     }
                     else
                     {
@@ -118,9 +106,15 @@ namespace RegistroUsuario
 
         private void button2_Click(object sender, EventArgs e)
         {
-            con = new UsuariosBLL();
-            string SQL = "DELETE FROM Usuarios WHERE Id =" + IdUsuario.Text;
-            MessageBox.Show(con.insertar(SQL));
+            MDB = new ManipulacionDB();
+            MDB.DeleteUser(new Usuarios()
+            {
+                Id = Convert.ToInt32(IdUsuario.Text),
+                Nombre = TBnombre.Text,
+                Usuario = TBUsuario.Text,
+                Contraseña = TBPass.Text,
+                Tipo_Usuario = TiposUsuario.SelectedItem.ToString()
+            });
             limpiarPantalla();
         }
 
@@ -131,6 +125,16 @@ namespace RegistroUsuario
 
         private void button3_Click(object sender, EventArgs e)
         {
+            var coneccion = new FinalProyectDB();
+            coneccion.TypeUser.Add(new TipoDeUsuario() { Id = 1, Tipo_Usuario = "Administrador" });
+            coneccion.TypeUser.Add(new TipoDeUsuario() { Id = 2, Tipo_Usuario = "Vendedor" });
+            coneccion.TypeUser.Add(new TipoDeUsuario() { Id = 3, Tipo_Usuario = "Granjero" });
+            coneccion.SaveChanges();
+            if(tu == 0)
+            {
+                cargarTipoUsuario();
+                ++tu;
+            }
             limpiarPantalla();
         }
 

@@ -119,26 +119,22 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataBase\UsersDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DataBase\UsersDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>UsersDB.mdf</DependentUpon>
-    </Content>
     <None Include="Resources\BotonCancelar.png" />
     <None Include="Resources\BotonAñadir.png" />
     <None Include="Resources\BotonGuardar1.png" />
     <None Include="Resources\BotonBusqueda1.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{155b896a-6da2-40cd-8453-141d5f8815ac}</Project>
-      <Name>BLL</Name>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ManejoDB\ManejoDB.csproj">
+      <Project>{BD9430CC-13AB-4211-B397-B890DE0DA5D0}</Project>
+      <Name>ManejoDB</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Entidades\Entidades.csproj">
-      <Project>{e8ab7a95-d156-4fd0-8a47-3100744bcfb6}</Project>
-      <Name>Entidades</Name>
+    <ProjectReference Include="..\ProyectoFinal.Data\ProyectoFinal.Data.csproj">
+      <Project>{ad136d78-dbcf-4556-bd5c-240af87d9e17}</Project>
+      <Name>ProyectoFinal.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
