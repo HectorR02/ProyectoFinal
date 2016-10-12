@@ -7,5 +7,6 @@ namespace ProyectoFinal.Data.Modelo
     {
         public DbSet<TipoDeUsuario> TypeUser { get; set; }
         public DbSet<Usuarios> User { get; set; }
+        public DbSet<Empleado> Employe { get; set; }
     }
 }

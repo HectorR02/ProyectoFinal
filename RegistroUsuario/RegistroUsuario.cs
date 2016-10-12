@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Data.Entity;
-using System.Linq;
 using ProyectoFinal.Data.Modelo;
 using ProyectoFinal.Data.Entidades;
 using ManejoDB;

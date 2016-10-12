@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\Empleado.cs" />
     <Compile Include="Entidades\TipoDeUsuario.cs" />
     <Compile Include="Entidades\Usuarios.cs" />
     <Compile Include="Modelo\FinalProyectDB.cs" />

@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ManejoDB
@@ -176,6 +174,70 @@ namespace ManejoDB
                 }
             }
             return resultado;
+        }
+
+        public string AddEmploye(Empleado nuevo)
+        {
+            string resultado = "-- Operacion Fallido --";
+            using (var conexion = new FinalProyectDB())
+            {
+                try
+                {
+                    conexion.Employe.Add(nuevo);
+                    conexion.SaveChanges();
+                    resultado = "-- Operacion Existosa --";
+                }catch(Exception e)
+                {
+                    resultado += e.ToString();
+                }
+            }
+            return resultado;
+        }
+        public Empleado SearchEmploye(int Id)
+        {
+            var empleado = new Empleado();
+            using (var conexion = new FinalProyectDB())
+            {
+                try
+                {
+                    conexion.Employe.Where(x => x.Id == Id).SingleOrDefault();
+                }catch(Exception e)
+                {
+                    MessageBox.Show("-- Operacion Fallida --\n" + e.ToString());
+                }
+            }
+            return empleado;
+        }
+        public List<Empleado> EmployeList()
+        {
+            var listado = new List<Empleado>();
+            using (var conexion = new FinalProyectDB())
+            {
+                try
+                {
+                    listado = conexion.Employe.ToList();
+                }catch(Exception e)
+                {
+                    MessageBox.Show("-- Operacion Fallida --" + e.ToString());
+                }
+            }
+            return listado;
+        }
+        public string DeleteEmploye(Empleado existente)
+        {
+            string resultado = "-- Operacion Fallida --\n";
+            using(var conexion = new FinalProyectDB())
+            {
+                try
+                {
+                    conexion.Entry(existente).State = EntityState.Deleted;
+                    conexion.SaveChanges();
+                    resultado = "-- Operacion Exitosa --";
+                }catch(Exception e)
+                {
+                    MessageBox.Show(resultado+)
+                }
+            }
         }
     }
 }
