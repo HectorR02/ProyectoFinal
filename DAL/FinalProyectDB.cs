@@ -10,11 +10,11 @@ namespace DAL
 {
     public class FinalProyectDB: DbContext 
     {
-        public FinalProyectDB() : base ("name = ConStr")
+        public FinalProyectDB() : base ("name = ProFnal")
         {
 
         }
-        public DbSet<Usuarios> Users { get; set; }
-        public DbSet<TiposDeUsuario> TypeUsers { get; set; }
+        public virtual DbSet<Usuarios> Users { get; set; }
+        public virtual DbSet<TiposDeUsuario> TypeUsers { get; set; }
     }
 }
