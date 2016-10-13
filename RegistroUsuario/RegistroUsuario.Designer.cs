@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroUsuario));
             this.Nombre = new System.Windows.Forms.Label();
-            this.TBnombre = new System.Windows.Forms.TextBox();
-            this.TBUsuario = new System.Windows.Forms.TextBox();
-            this.TBPass = new System.Windows.Forms.TextBox();
-            this.TBConfPass = new System.Windows.Forms.TextBox();
+            this.TBnombreTextBox = new System.Windows.Forms.TextBox();
+            this.TBUsuarioTextBox = new System.Windows.Forms.TextBox();
+            this.TBPassTextBox = new System.Windows.Forms.TextBox();
+            this.TBConfPassTextBox = new System.Windows.Forms.TextBox();
             this.Usuario = new System.Windows.Forms.Label();
             this.Pass = new System.Windows.Forms.Label();
             this.ConfPass = new System.Windows.Forms.Label();
             this.Titulo = new System.Windows.Forms.Label();
             this.CBVerPass = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.IdUsuario = new System.Windows.Forms.TextBox();
-            this.TiposUsuario = new System.Windows.Forms.ComboBox();
+            this.IdUsuarioTextBox = new System.Windows.Forms.TextBox();
+            this.TiposUsuarioComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.Eliminar = new System.Windows.Forms.Button();
@@ -61,56 +61,56 @@
             this.Nombre.TabIndex = 1;
             this.Nombre.Text = "Nombre";
             // 
-            // TBnombre
+            // TBnombreTextBox
             // 
-            this.TBnombre.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TBnombre.Enabled = false;
-            this.TBnombre.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBnombre.ForeColor = System.Drawing.Color.Silver;
-            this.TBnombre.Location = new System.Drawing.Point(72, 181);
-            this.TBnombre.Name = "TBnombre";
-            this.TBnombre.Size = new System.Drawing.Size(483, 29);
-            this.TBnombre.TabIndex = 2;
-            this.TBnombre.Text = "Ejemplo: Juan Perez";
+            this.TBnombreTextBox.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TBnombreTextBox.Enabled = false;
+            this.TBnombreTextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBnombreTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.TBnombreTextBox.Location = new System.Drawing.Point(72, 181);
+            this.TBnombreTextBox.Name = "TBnombreTextBox";
+            this.TBnombreTextBox.Size = new System.Drawing.Size(483, 29);
+            this.TBnombreTextBox.TabIndex = 2;
+            this.TBnombreTextBox.Text = "Ejemplo: Juan Perez";
             // 
-            // TBUsuario
+            // TBUsuarioTextBox
             // 
-            this.TBUsuario.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TBUsuario.Enabled = false;
-            this.TBUsuario.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBUsuario.ForeColor = System.Drawing.Color.Silver;
-            this.TBUsuario.Location = new System.Drawing.Point(72, 261);
-            this.TBUsuario.MaxLength = 12;
-            this.TBUsuario.Name = "TBUsuario";
-            this.TBUsuario.Size = new System.Drawing.Size(483, 29);
-            this.TBUsuario.TabIndex = 3;
-            this.TBUsuario.Text = "Ejemplo: juan02";
+            this.TBUsuarioTextBox.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TBUsuarioTextBox.Enabled = false;
+            this.TBUsuarioTextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBUsuarioTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.TBUsuarioTextBox.Location = new System.Drawing.Point(72, 261);
+            this.TBUsuarioTextBox.MaxLength = 12;
+            this.TBUsuarioTextBox.Name = "TBUsuarioTextBox";
+            this.TBUsuarioTextBox.Size = new System.Drawing.Size(483, 29);
+            this.TBUsuarioTextBox.TabIndex = 3;
+            this.TBUsuarioTextBox.Text = "Ejemplo: juan02";
             // 
-            // TBPass
+            // TBPassTextBox
             // 
-            this.TBPass.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TBPass.Enabled = false;
-            this.TBPass.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBPass.ForeColor = System.Drawing.Color.Silver;
-            this.TBPass.Location = new System.Drawing.Point(72, 341);
-            this.TBPass.MaxLength = 10;
-            this.TBPass.Name = "TBPass";
-            this.TBPass.Size = new System.Drawing.Size(483, 29);
-            this.TBPass.TabIndex = 4;
-            this.TBPass.Text = "Contraseña";
+            this.TBPassTextBox.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TBPassTextBox.Enabled = false;
+            this.TBPassTextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBPassTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.TBPassTextBox.Location = new System.Drawing.Point(72, 341);
+            this.TBPassTextBox.MaxLength = 10;
+            this.TBPassTextBox.Name = "TBPassTextBox";
+            this.TBPassTextBox.Size = new System.Drawing.Size(483, 29);
+            this.TBPassTextBox.TabIndex = 4;
+            this.TBPassTextBox.Text = "Contraseña";
             // 
-            // TBConfPass
+            // TBConfPassTextBox
             // 
-            this.TBConfPass.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TBConfPass.Enabled = false;
-            this.TBConfPass.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBConfPass.ForeColor = System.Drawing.Color.Silver;
-            this.TBConfPass.Location = new System.Drawing.Point(72, 421);
-            this.TBConfPass.MaxLength = 10;
-            this.TBConfPass.Name = "TBConfPass";
-            this.TBConfPass.Size = new System.Drawing.Size(483, 29);
-            this.TBConfPass.TabIndex = 5;
-            this.TBConfPass.Text = "Contraseña";
+            this.TBConfPassTextBox.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TBConfPassTextBox.Enabled = false;
+            this.TBConfPassTextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBConfPassTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.TBConfPassTextBox.Location = new System.Drawing.Point(72, 421);
+            this.TBConfPassTextBox.MaxLength = 10;
+            this.TBConfPassTextBox.Name = "TBConfPassTextBox";
+            this.TBConfPassTextBox.Size = new System.Drawing.Size(483, 29);
+            this.TBConfPassTextBox.TabIndex = 5;
+            this.TBConfPassTextBox.Text = "Contraseña";
             // 
             // Usuario
             // 
@@ -175,29 +175,29 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Id Usuario";
             // 
-            // IdUsuario
+            // IdUsuarioTextBox
             // 
-            this.IdUsuario.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.IdUsuario.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IdUsuario.ForeColor = System.Drawing.Color.Silver;
-            this.IdUsuario.Location = new System.Drawing.Point(72, 103);
-            this.IdUsuario.Name = "IdUsuario";
-            this.IdUsuario.Size = new System.Drawing.Size(340, 29);
-            this.IdUsuario.TabIndex = 13;
-            this.IdUsuario.Text = "Ejemplo: 0001";
-            this.IdUsuario.TextChanged += new System.EventHandler(this.IdUsuario_TextChanged);
+            this.IdUsuarioTextBox.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.IdUsuarioTextBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IdUsuarioTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.IdUsuarioTextBox.Location = new System.Drawing.Point(72, 103);
+            this.IdUsuarioTextBox.Name = "IdUsuarioTextBox";
+            this.IdUsuarioTextBox.Size = new System.Drawing.Size(340, 29);
+            this.IdUsuarioTextBox.TabIndex = 13;
+            this.IdUsuarioTextBox.Text = "Ejemplo: 0001";
+            this.IdUsuarioTextBox.TextChanged += new System.EventHandler(this.IdUsuario_TextChanged);
             // 
-            // TiposUsuario
+            // TiposUsuarioComboBox
             // 
-            this.TiposUsuario.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.TiposUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TiposUsuario.Enabled = false;
-            this.TiposUsuario.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TiposUsuario.FormattingEnabled = true;
-            this.TiposUsuario.Location = new System.Drawing.Point(72, 495);
-            this.TiposUsuario.Name = "TiposUsuario";
-            this.TiposUsuario.Size = new System.Drawing.Size(483, 30);
-            this.TiposUsuario.TabIndex = 15;
+            this.TiposUsuarioComboBox.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TiposUsuarioComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TiposUsuarioComboBox.Enabled = false;
+            this.TiposUsuarioComboBox.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TiposUsuarioComboBox.FormattingEnabled = true;
+            this.TiposUsuarioComboBox.Location = new System.Drawing.Point(72, 495);
+            this.TiposUsuarioComboBox.Name = "TiposUsuarioComboBox";
+            this.TiposUsuarioComboBox.Size = new System.Drawing.Size(483, 30);
+            this.TiposUsuarioComboBox.TabIndex = 15;
             // 
             // label2
             // 
@@ -298,9 +298,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.Eliminar);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.TiposUsuario);
+            this.Controls.Add(this.TiposUsuarioComboBox);
             this.Controls.Add(this.Buscar);
-            this.Controls.Add(this.IdUsuario);
+            this.Controls.Add(this.IdUsuarioTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CBVerPass);
             this.Controls.Add(this.Titulo);
@@ -308,10 +308,10 @@
             this.Controls.Add(this.ConfPass);
             this.Controls.Add(this.Pass);
             this.Controls.Add(this.Usuario);
-            this.Controls.Add(this.TBConfPass);
-            this.Controls.Add(this.TBPass);
-            this.Controls.Add(this.TBUsuario);
-            this.Controls.Add(this.TBnombre);
+            this.Controls.Add(this.TBConfPassTextBox);
+            this.Controls.Add(this.TBPassTextBox);
+            this.Controls.Add(this.TBUsuarioTextBox);
+            this.Controls.Add(this.TBnombreTextBox);
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.PBFondo);
             this.MaximizeBox = false;
@@ -330,10 +330,10 @@
 
         private System.Windows.Forms.PictureBox PBFondo;
         private System.Windows.Forms.Label Nombre;
-        private System.Windows.Forms.TextBox TBnombre;
-        private System.Windows.Forms.TextBox TBUsuario;
-        private System.Windows.Forms.TextBox TBPass;
-        private System.Windows.Forms.TextBox TBConfPass;
+        private System.Windows.Forms.TextBox TBnombreTextBox;
+        private System.Windows.Forms.TextBox TBUsuarioTextBox;
+        private System.Windows.Forms.TextBox TBPassTextBox;
+        private System.Windows.Forms.TextBox TBConfPassTextBox;
         private System.Windows.Forms.Label Usuario;
         private System.Windows.Forms.Label Pass;
         private System.Windows.Forms.Label ConfPass;
@@ -341,9 +341,9 @@
         private System.Windows.Forms.Label Titulo;
         private System.Windows.Forms.CheckBox CBVerPass;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox IdUsuario;
+        private System.Windows.Forms.TextBox IdUsuarioTextBox;
         private System.Windows.Forms.Button Buscar;
-        private System.Windows.Forms.ComboBox TiposUsuario;
+        private System.Windows.Forms.ComboBox TiposUsuarioComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Eliminar;
         private System.Windows.Forms.Button button3;

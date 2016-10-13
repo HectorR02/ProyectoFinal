@@ -27,10 +27,10 @@ namespace RegistroUsuario.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\DataBase\\Proy" +
-            "ectoFinalDB.mdf;Integrated Security=True;Connect Timeout=30")]
-        public string ProFnal {
+            "ectoFinalDataBase.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string ConStr {
             get {
-                return ((string)(this["ProFnal"]));
+                return ((string)(this["ConStr"]));
             }
         }
     }

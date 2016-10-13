@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -12,16 +13,16 @@ namespace BLL
         public static bool Insertar(TiposDeUsuario nuevo)
         {
             bool resultado = false;
-            using (var conexion = new FinalProyectDB())
+            using (var conexion = new ProyectoFinalDataBase())
             {
                 try
                 {
-                    conexion.TypeUsers.Add(nuevo);
+                    conexion.TipoDeUsuario.Add(nuevo);
                     conexion.SaveChanges();
                     resultado = true;
-                }catch(Exception)
+                }catch(Exception e)
                 {
-                    throw;
+                    MessageBox.Show(e.ToString());
                 }
             }
             return resultado;
@@ -29,11 +30,11 @@ namespace BLL
         public static TiposDeUsuario Buscar(int TipoDeUsuarioId)
         {
             var typeUser = new TiposDeUsuario();
-            using (var conexion = new FinalProyectDB())
+            using (var conexion = new ProyectoFinalDataBase())
             {
                 try
                 {
-                    typeUser = conexion.TypeUsers.Find(TipoDeUsuarioId);
+                    typeUser = conexion.TipoDeUsuario.Find(TipoDeUsuarioId);
                 }
                 catch (Exception)
                 {
@@ -45,7 +46,7 @@ namespace BLL
         public static bool Eliminar(TiposDeUsuario existente)
         {
             bool resultado = false;
-            using (var conexion = new FinalProyectDB())
+            using (var conexion = new ProyectoFinalDataBase())
             {
                 try
                 {
@@ -63,11 +64,11 @@ namespace BLL
         public static List<TiposDeUsuario> GetLista()
         {
             var lista = new List<TiposDeUsuario>();
-            using (var conexion = new FinalProyectDB())
+            using (var conexion = new ProyectoFinalDataBase())
             {
                 try
                 {
-                    lista = conexion.TypeUsers.ToList();
+                    lista = conexion.TipoDeUsuario.ToList();
                 }catch(Exception)
                 {
                     throw;

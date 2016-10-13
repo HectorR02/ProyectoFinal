@@ -149,12 +149,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataBase\ProyectoFinalDB.mdf">
+    <Content Include="DataBase\ProyectoFinalDataBase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DataBase\ProyectoFinalDB_log.ldf">
+    <Content Include="DataBase\ProyectoFinalDataBase_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>ProyectoFinalDB.mdf</DependentUpon>
+      <DependentUpon>ProyectoFinalDataBase.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
@@ -14,11 +12,11 @@ namespace BLL
         public static bool Insertar(Usuarios nuevo)
         {
             bool resultado = false;
-            using (var conexion = new FinalProyectDB())
+            using (var conexion = new ProyectoFinalDataBase())
             {
                 try
                 {
-                    conexion.Users.Add(nuevo);
+                    conexion.Usuario.Add(nuevo);
                     conexion.SaveChanges();
                     resultado = true;
                 }catch(Exception)
@@ -31,11 +29,11 @@ namespace BLL
         public static Usuarios Buscar(int UsuarioId)
         {
             var usuario = new Usuarios();
-            using (var conexion = new FinalProyectDB())
+            using (var conexion = new ProyectoFinalDataBase())
             {
                 try
                 {
-                    usuario = conexion.Users.Find(UsuarioId);
+                    usuario = conexion.Usuario.Find(UsuarioId);
                 }catch(Exception)
                 {
                     throw;
@@ -46,7 +44,7 @@ namespace BLL
         public static bool Eliminar(Usuarios existente)
         {
             bool resultado = false;
-            using (var conexion = new FinalProyectDB())
+            using (var conexion = new ProyectoFinalDataBase())
             {
                 try
                 {
@@ -64,11 +62,11 @@ namespace BLL
         public static List<Usuarios> GetList()
         {
             var lista = new List<Usuarios>();
-            using (var conexion = new FinalProyectDB())
+            using (var conexion = new ProyectoFinalDataBase())
             {
                 try
                 {
-                    lista = conexion.Users.ToList();
+                    lista = conexion.Usuario.ToList();
                 }
                 catch (Exception)
                 {
