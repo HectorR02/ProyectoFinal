@@ -2,20 +2,17 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Data.Entity;
-using ProyectoFinal.Data.Modelo;
-using ProyectoFinal.Data.Entidades;
-using ManejoDB;
+using Entidades;
 
 namespace RegistroUsuario
 {
     public partial class RegistroUsuario : Form
     {
-        ManipulacionDB MDB;
         int tu = 0;
         public RegistroUsuario()
         {
             InitializeComponent();
-            Database.SetInitializer<FinalProyectDB>(new DropCreateDatabaseAlways<FinalProyectDB>());
+           // Database.SetInitializer<FinalProyectDB>(new DropCreateDatabaseAlways<FinalProyectDB>());
             Utileria v = new Utileria(IdUsuario, "Ejemplo: juan02", TBnombre,"N");
             Utileria v1 = new Utileria(TBnombre, "Ejemplo: Juan Perez", TBUsuario,"L");
             Utileria v2 = new Utileria(TBUsuario, "Ejemplo: juan02", TBPass,"LN"); 
@@ -39,19 +36,23 @@ namespace RegistroUsuario
 
         private void cargarUsuario()
         {
-            MDB = new ManipulacionDB();
-            var user = new Usuarios( MDB.SearchUser(Convert.ToInt32(IdUsuario.Text)));
-            IdUsuario.Text = user.Id.ToString();
-            TBnombre.Text = user.Nombre;
-            TBUsuario.Text = user.Usuario;
-            TBConfPass.Text = TBPass.Text = user.Contraseña;
-            TiposUsuario.SelectedItem = user.Tipo_Usuario;
+            if (!string.IsNullOrEmpty(IdUsuario.Text))
+            {
+                var user = BLL.UsuariosBLL.Buscar(Convert.ToInt32(IdUsuario.Text));
+                IdUsuario.Text = user.UsuarioId.ToString();
+                TBnombre.Text = user.Nombre;
+                TBUsuario.Text = user.Usuario;
+                TBConfPass.Text = TBPass.Text = user.Clave;
+                TiposUsuario.SelectedItem = user.TipoDeUsuario;
+            }else
+            {
+                //ErrorProvider
+            }            
         }
 
         private void cargarTipoUsuario()
         {
-            MDB = new ManipulacionDB();
-            TiposUsuario.DataSource = MDB.TypeUserList();
+            TiposUsuario.DataSource = BLL.TiposDeUsuarioBLL.GetLista();
             TiposUsuario.ValueMember = "Id";
             TiposUsuario.DisplayMember = "Tipo_Usuario";
         }
@@ -64,12 +65,11 @@ namespace RegistroUsuario
                 {
                     if (TBPass.Text.Equals(TBConfPass.Text))
                     {
-                        MDB = new ManipulacionDB();
-                        MDB.AddUser(new Usuarios() { Id = Convert.ToInt32(IdUsuario.Text),
+                        BLL.UsuariosBLL.Insertar(new Usuarios() { UsuarioId = Convert.ToInt32(IdUsuario.Text),
                             Nombre = TBnombre.Text,
                             Usuario = TBUsuario.Text,
-                            Contraseña = TBPass.Text,
-                            Tipo_Usuario = TiposUsuario.SelectedText
+                            Clave = TBPass.Text,
+                            TipoDeUsuario = TiposUsuario.SelectedText
                         });
                         TBnombre.ForeColor = TBPass.ForeColor = TBConfPass.ForeColor = TBUsuario.ForeColor = Color.Silver;
                         TBnombre.Text = "Ejemplo: Juan Perez";
@@ -105,14 +105,13 @@ namespace RegistroUsuario
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MDB = new ManipulacionDB();
-            MDB.DeleteUser(new Usuarios()
+            BLL.UsuariosBLL.Eliminar(new Usuarios()
             {
-                Id = Convert.ToInt32(IdUsuario.Text),
+                UsuarioId = Convert.ToInt32(IdUsuario.Text),
                 Nombre = TBnombre.Text,
                 Usuario = TBUsuario.Text,
-                Contraseña = TBPass.Text,
-                Tipo_Usuario = TiposUsuario.SelectedItem.ToString()
+                Clave = TBPass.Text,
+                TipoDeUsuario = TiposUsuario.SelectedItem.ToString()
             });
             limpiarPantalla();
         }
@@ -124,11 +123,9 @@ namespace RegistroUsuario
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var coneccion = new FinalProyectDB();
-            coneccion.TypeUser.Add(new TipoDeUsuario() { Id = 1, Tipo_Usuario = "Administrador" });
-            coneccion.TypeUser.Add(new TipoDeUsuario() { Id = 2, Tipo_Usuario = "Vendedor" });
-            coneccion.TypeUser.Add(new TipoDeUsuario() { Id = 3, Tipo_Usuario = "Granjero" });
-            coneccion.SaveChanges();
+            BLL.TiposDeUsuarioBLL.Insertar(new TiposDeUsuario() { TipoDeUsuarioID = 1, TipoDeUsuario = "Administrador" });
+            BLL.TiposDeUsuarioBLL.Insertar(new TiposDeUsuario() { TipoDeUsuarioID = 2, TipoDeUsuario = "Vendedor" });
+            BLL.TiposDeUsuarioBLL.Insertar(new TiposDeUsuario() { TipoDeUsuarioID = 3, TipoDeUsuario = "Granjero" });
             if(tu == 0)
             {
                 cargarTipoUsuario();
