@@ -1,4 +1,4 @@
-﻿namespace Login
+﻿namespace RegistroUsuario.Formularios
 {
     partial class Login
     {
@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.PBFondoLogin = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.UsuarioTextBox = new System.Windows.Forms.TextBox();
+            this.ContraseñaTextBox = new System.Windows.Forms.TextBox();
             this.BIniciarSesion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.CBMostrarContraseña = new System.Windows.Forms.CheckBox();
@@ -49,34 +49,34 @@
             this.PBFondoLogin.TabIndex = 0;
             this.PBFondoLogin.TabStop = false;
             // 
-            // textBox1
+            // UsuarioTextBox
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox1.CausesValidation = false;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Silver;
-            this.textBox1.Location = new System.Drawing.Point(96, 97);
-            this.textBox1.MaxLength = 15;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(219, 32);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "Usuario";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.UsuarioTextBox.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.UsuarioTextBox.CausesValidation = false;
+            this.UsuarioTextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsuarioTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.UsuarioTextBox.Location = new System.Drawing.Point(96, 97);
+            this.UsuarioTextBox.MaxLength = 15;
+            this.UsuarioTextBox.Name = "UsuarioTextBox";
+            this.UsuarioTextBox.Size = new System.Drawing.Size(219, 32);
+            this.UsuarioTextBox.TabIndex = 6;
+            this.UsuarioTextBox.Text = "Usuario";
+            this.UsuarioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UsuarioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
-            // textBox2
+            // ContraseñaTextBox
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Silver;
-            this.textBox2.Location = new System.Drawing.Point(96, 163);
-            this.textBox2.MaxLength = 12;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(219, 32);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.Text = "Contraseña";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.ContraseñaTextBox.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ContraseñaTextBox.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContraseñaTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.ContraseñaTextBox.Location = new System.Drawing.Point(96, 163);
+            this.ContraseñaTextBox.MaxLength = 12;
+            this.ContraseñaTextBox.Name = "ContraseñaTextBox";
+            this.ContraseñaTextBox.Size = new System.Drawing.Size(219, 32);
+            this.ContraseñaTextBox.TabIndex = 7;
+            this.ContraseñaTextBox.Text = "Contraseña";
+            this.ContraseñaTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ContraseñaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // BIniciarSesion
             // 
@@ -124,8 +124,8 @@
             this.Controls.Add(this.CBMostrarContraseña);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BIniciarSesion);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ContraseñaTextBox);
+            this.Controls.Add(this.UsuarioTextBox);
             this.Controls.Add(this.PBFondoLogin);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(433, 368);
@@ -142,10 +142,10 @@
         #endregion
 
         private System.Windows.Forms.PictureBox PBFondoLogin;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox ContraseñaTextBox;
         private System.Windows.Forms.Button BIniciarSesion;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox UsuarioTextBox;
         private System.Windows.Forms.CheckBox CBMostrarContraseña;
     }
 }

@@ -1,12 +1,6 @@
 ﻿using Entidades;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RegistroUsuario.Formularios
@@ -16,7 +10,7 @@ namespace RegistroUsuario.Formularios
         public InventarioHuevos()
         {
             InitializeComponent();
-            //var validacion = new Utileria(HuevoIdTextBox1, "Ejemplo: 01", HuevoIdTextBox1, "N");
+            var validacion = new Utileria(HuevoIdTextBox1, "Ejemplo: 01", HuevoIdTextBox1, "N");
             BLL.HuevosBLL.Insertar(new Huevos() { HuevosId = 1, TipoDeHuevo = "Limpios", Existencia = 500 });
             BLL.HuevosBLL.Insertar(new Huevos() { HuevosId = 2, TipoDeHuevo = "Sucios", Existencia = 200 });
             cargarTiposHuevos();
@@ -39,7 +33,6 @@ namespace RegistroUsuario.Formularios
             else
                 lista.Add(BLL.HuevosBLL.Buscar(Convert.ToInt32(HuevoIdTextBox1.Text), TipoDeHuevoComboBox1.SelectedItem.ToString()));
 
-            //HuevoIdTextBox1.Text = TipoDeHuevoComboBox1.SelectedItem.ToString();
             ConsultaDataGridView.DataSource = lista;
         }
     }

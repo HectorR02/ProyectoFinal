@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Login
+namespace RegistroUsuario.Formularios
 {
 
     public partial class Login : Form
@@ -17,30 +10,33 @@ namespace Login
         public Login()
         {
             InitializeComponent();
+            BLL.UsuariosBLL.Insertar(new Entidades.Usuarios() { UsuarioId = 1, Nombre = "Juan", Usuario = "Asource", Clave = "96321", TipoDeUsuario = "Administrador"});
+            BLL.UsuariosBLL.Insertar(new Entidades.Usuarios() { UsuarioId = 2, Nombre = "Juan", Usuario = "juan02", Clave = "12369", TipoDeUsuario = "Vendedor" });
             label1.Parent = PBFondoLogin;
             label1.BackColor = Color.Transparent;
             CBMostrarContraseña.Parent = PBFondoLogin;
             CBMostrarContraseña.BackColor = Color.Transparent;            
         }
+
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                if (string.IsNullOrEmpty(textBox1.Text.Trim()))
+                if (string.IsNullOrEmpty(UsuarioTextBox.Text.Trim()))
                 {
-                    textBox1.Text = "Usuario";
-                    textBox1.ForeColor = Color.Silver;
+                    UsuarioTextBox.Text = "Usuario";
+                    UsuarioTextBox.ForeColor = Color.Silver;
                 }
                 
-                textBox2.Focus();
+                ContraseñaTextBox.Focus();
             }
             else
                 if (char.IsDigit(e.KeyChar) || char.IsLetter(e.KeyChar))
                 {
-                    if(textBox1.Text.Equals("Usuario"))
+                    if(UsuarioTextBox.Text.Equals("Usuario"))
                     {
-                        textBox1.Clear();
-                        textBox1.ForeColor = Color.Black;
+                        UsuarioTextBox.Clear();
+                        UsuarioTextBox.ForeColor = Color.Black;
                     }
                 }
         }
@@ -49,21 +45,21 @@ namespace Login
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                if(string.IsNullOrEmpty(textBox2.Text.Trim()))
+                if(string.IsNullOrEmpty(ContraseñaTextBox.Text.Trim()))
                 {
-                    textBox2.PasswordChar = '\0';
-                    textBox2.Text = "Contraseña";
-                    textBox2.ForeColor = Color.Silver;
+                    ContraseñaTextBox.PasswordChar = '\0';
+                    ContraseñaTextBox.Text = "Contraseña";
+                    ContraseñaTextBox.ForeColor = Color.Silver;
                 }
             }
             else
                 if(char.IsDigit(e.KeyChar) || char.IsLetter(e.KeyChar))
                 {
-                    if (textBox2.Text.Equals("Contraseña"))
+                    if (ContraseñaTextBox.Text.Equals("Contraseña"))
                     {
-                        textBox2.Clear();
-                        textBox2.PasswordChar = '*';
-                        textBox2.ForeColor = Color.Black;
+                        ContraseñaTextBox.Clear();
+                        ContraseñaTextBox.PasswordChar = '*';
+                        ContraseñaTextBox.ForeColor = Color.Black;
                     }
                 }
         }
@@ -72,16 +68,39 @@ namespace Login
         {
             if(CBMostrarContraseña.Checked)
             {
-                if (textBox2.PasswordChar == '*')
-                    textBox2.PasswordChar = '\0';
+                if (ContraseñaTextBox.PasswordChar == '*')
+                    ContraseñaTextBox.PasswordChar = '\0';
             }
             else
-                textBox2.PasswordChar = '*';
+                ContraseñaTextBox.PasswordChar = '*';
         }
 
         private void BIniciarSesion_Click(object sender, EventArgs e)
         {
-
+            var usuario = BLL.UsuariosBLL.Buscar(UsuarioTextBox.Text);
+            if(usuario != null)
+            {
+                if (usuario.Clave.Equals(ContraseñaTextBox.Text))
+                {
+                    MessageBox.Show("Se conecto hehehe");
+                }
+                else
+                {
+                    MessageBox.Show("La contraseña es invalida");
+                    ContraseñaTextBox.Clear();
+                    ContraseñaTextBox.Focus();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Este Usuario no existe en \nla base de datos");
+                UsuarioTextBox.Clear();
+                ContraseñaTextBox.Clear();
+                UsuarioTextBox.Text = "Usuario";
+                ContraseñaTextBox.PasswordChar = '\0';
+                ContraseñaTextBox.Text = "Contraseña";
+                ContraseñaTextBox.ForeColor = UsuarioTextBox.ForeColor = Color.Silver;
+            }
         }
 
         private void Login_Load(object sender, EventArgs e)

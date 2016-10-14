@@ -75,5 +75,22 @@ namespace BLL
             }
             return lista;
         }
+
+        public static Usuarios Buscar(string User)
+        {
+            var usuario = new Usuarios();
+            using (var conexion = new ProyectoFinalDataBase())
+            {
+                try
+                {
+                    usuario = conexion.Usuario.Where(x => x.Usuario.Equals(User)).SingleOrDefault();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+            return usuario;
+        }
     }
 }

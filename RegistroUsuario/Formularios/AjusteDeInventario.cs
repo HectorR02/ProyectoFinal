@@ -10,8 +10,10 @@ namespace RegistroUsuario.Formularios
         {
             InitializeComponent();
             var validar = new Utileria(CantidadTextBox, "Ejemplo: 20", CantidadTextBox, "N");
+            //Temporal
             BLL.HuevosBLL.Insertar(new Huevos() { HuevosId = 1, TipoDeHuevo = "Limpios", Existencia = 500 });
             BLL.HuevosBLL.Insertar(new Huevos() { HuevosId = 2, TipoDeHuevo = "Sucios", Existencia = 200 });
+
             CargarTipos();
         }
         public void CargarTipos()
