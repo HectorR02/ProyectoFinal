@@ -30,8 +30,8 @@
         {
             this.TipoDeHuevoComboBox = new System.Windows.Forms.ComboBox();
             this.CantidadTextBox = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.DisminuirButton = new System.Windows.Forms.Button();
+            this.AumentarButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -54,35 +54,37 @@
             this.CantidadTextBox.Size = new System.Drawing.Size(237, 32);
             this.CantidadTextBox.TabIndex = 3;
             // 
-            // button2
+            // DisminuirButton
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::RegistroUsuario.Properties.Resources.Disminuir;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(317, 146);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 47);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Disminuir";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.DisminuirButton.FlatAppearance.BorderSize = 0;
+            this.DisminuirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DisminuirButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DisminuirButton.Image = global::RegistroUsuario.Properties.Resources.Disminuir;
+            this.DisminuirButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DisminuirButton.Location = new System.Drawing.Point(317, 146);
+            this.DisminuirButton.Name = "DisminuirButton";
+            this.DisminuirButton.Size = new System.Drawing.Size(154, 47);
+            this.DisminuirButton.TabIndex = 4;
+            this.DisminuirButton.Text = "Disminuir";
+            this.DisminuirButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.DisminuirButton.UseVisualStyleBackColor = true;
+            this.DisminuirButton.Click += new System.EventHandler(this.DisminuirButton_Click);
             // 
-            // button1
+            // AumentarButton
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::RegistroUsuario.Properties.Resources.Aumentar;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(116, 146);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 47);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Aumentar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.AumentarButton.FlatAppearance.BorderSize = 0;
+            this.AumentarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AumentarButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AumentarButton.Image = global::RegistroUsuario.Properties.Resources.Aumentar;
+            this.AumentarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AumentarButton.Location = new System.Drawing.Point(116, 146);
+            this.AumentarButton.Name = "AumentarButton";
+            this.AumentarButton.Size = new System.Drawing.Size(148, 47);
+            this.AumentarButton.TabIndex = 0;
+            this.AumentarButton.Text = "Aumentar";
+            this.AumentarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AumentarButton.UseVisualStyleBackColor = true;
+            this.AumentarButton.Click += new System.EventHandler(this.AumentarButton_Click);
             // 
             // label1
             // 
@@ -111,10 +113,10 @@
             this.ClientSize = new System.Drawing.Size(578, 235);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.DisminuirButton);
             this.Controls.Add(this.CantidadTextBox);
             this.Controls.Add(this.TipoDeHuevoComboBox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AumentarButton);
             this.Name = "AjusteDeInventario";
             this.Text = "Ajuste de Inventario";
             this.ResumeLayout(false);
@@ -124,10 +126,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AumentarButton;
         private System.Windows.Forms.ComboBox TipoDeHuevoComboBox;
         private System.Windows.Forms.TextBox CantidadTextBox;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button DisminuirButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
