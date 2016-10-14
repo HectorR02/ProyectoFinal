@@ -76,6 +76,12 @@
     <Compile Include="Formularios\AjusteDeInventario.Designer.cs">
       <DependentUpon>AjusteDeInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\InventarioHuevos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Utileria.cs" />
     <EmbeddedResource Include="Formularios\AjusteDeInventario.resx">
       <DependentUpon>AjusteDeInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\InventarioHuevos.resx">
       <DependentUpon>InventarioHuevos.cs</DependentUpon>
