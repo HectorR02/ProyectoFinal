@@ -8,5 +8,7 @@ namespace Entidades
         public int HuevosId { get; set; }
 
         public string TipoDeHuevo { get; set; }
+
+        public int Existencia { get; set; }
     }
 }

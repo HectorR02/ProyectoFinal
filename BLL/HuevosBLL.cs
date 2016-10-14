@@ -76,6 +76,40 @@ namespace BLL
                 }
             }
             return lista;
+        }        
+
+        public static Huevos Buscar(string TipoHuevo)
+        {
+            var huevo = new Huevos();
+            using(var conexion = new ProyectoFinalDataBase())
+            {
+                try
+                {
+                    huevo = conexion.Huevo.Where(x => x.TipoDeHuevo.Equals(TipoHuevo)).SingleOrDefault();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+            return huevo;
+        }
+
+        public static Huevos Buscar(int IdHuevo, string TipoHuevo)
+        {
+            var huevo = new Huevos();
+            using (var conexion = new ProyectoFinalDataBase())
+            {
+                try
+                {
+                    huevo = conexion.Huevo.Where(x => x.TipoDeHuevo.Equals(TipoHuevo) && x.HuevosId == IdHuevo).SingleOrDefault();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+            return huevo;
         }
     }
 }

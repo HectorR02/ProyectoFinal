@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RegistroUsuario
@@ -13,19 +9,19 @@ namespace RegistroUsuario
         TextBox caja;
         string Texto;
         TextBox siguiente;
-        public Utileria(TextBox externa, string texto, TextBox sig,String Modo)
+        public Utileria(TextBox externa, string texto, TextBox sig, string Modo)
         {
             caja = externa;
             Texto = texto;
             siguiente = sig;
-            if(Modo.Equals("LN"))
+            if (Modo.Equals("LN"))
                 caja.KeyPress += new KeyPressEventHandler(cajaLN_KeyPress);
-            else if(Modo.Equals("L"))
-                    caja.KeyPress += new KeyPressEventHandler(cajaL_KeyPress);
-                 else if(Modo.Equals("N"))
-                        caja.KeyPress += new KeyPressEventHandler(cajaN_KeyPress);
-                      else if(Modo.Equals("Pass"))
-                                caja.KeyPress += new KeyPressEventHandler(cajaPass_KeyPress);
+            else if (Modo.Equals("L"))
+                caja.KeyPress += new KeyPressEventHandler(cajaL_KeyPress);
+            else if (Modo.Equals("N"))
+                caja.KeyPress += new KeyPressEventHandler(cajaN_KeyPress);
+            else if (Modo.Equals("Pass"))
+                caja.KeyPress += new KeyPressEventHandler(cajaPass_KeyPress);
         }
 
         private void cajaLN_KeyPress(object sender, KeyPressEventArgs e)
