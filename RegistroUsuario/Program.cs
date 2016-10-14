@@ -14,7 +14,7 @@ namespace RegistroUsuario
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InventarioHuevos());
+            Application.Run(new AjusteDeInventario());
         }
     }
 }

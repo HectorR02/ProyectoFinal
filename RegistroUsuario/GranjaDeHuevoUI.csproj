@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\ActualizarInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ActualizarInventario.Designer.cs">
+      <DependentUpon>ActualizarInventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\InventarioHuevos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utileria.cs" />
+    <EmbeddedResource Include="Formularios\ActualizarInventario.resx">
+      <DependentUpon>ActualizarInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\InventarioHuevos.resx">
       <DependentUpon>InventarioHuevos.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +174,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ProyectoFinalDataBase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Disminuir.png" />
+    <None Include="Resources\Aumentar.png" />
     <None Include="Resources\BotonBusqueda.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

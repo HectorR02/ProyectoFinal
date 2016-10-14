@@ -78,6 +78,24 @@ namespace BLL
             return lista;
         }        
 
+        public static bool Actualizar(Huevos existente)
+        {
+            bool resultado = false;
+            using (var conexion = new ProyectoFinalDataBase())
+            {
+                try
+                {
+                    conexion.Entry(existente).State = EntityState.Modified;
+                    conexion.SaveChanges();
+                    resultado = true;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+                return resultado;
+        }
         public static Huevos Buscar(string TipoHuevo)
         {
             var huevo = new Huevos();
@@ -94,7 +112,6 @@ namespace BLL
             }
             return huevo;
         }
-
         public static Huevos Buscar(int IdHuevo, string TipoHuevo)
         {
             var huevo = new Huevos();

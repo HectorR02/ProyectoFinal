@@ -63,6 +63,16 @@ namespace RegistroUsuario.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Aumentar {
+            get {
+                object obj = ResourceManager.GetObject("Aumentar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BotonAñadir {
             get {
                 object obj = ResourceManager.GetObject("BotonAñadir", resourceCulture);
@@ -106,6 +116,16 @@ namespace RegistroUsuario.Properties {
         internal static System.Drawing.Bitmap BotonGuardar1 {
             get {
                 object obj = ResourceManager.GetObject("BotonGuardar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Disminuir {
+            get {
+                object obj = ResourceManager.GetObject("Disminuir", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
