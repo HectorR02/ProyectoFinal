@@ -97,14 +97,14 @@ namespace RegistroUsuario.Formularios
                 }
                 else
                 {
-                    MessageBox.Show("La contraseña es invalida");
+                    MessageBox.Show(this,"La contraseña es invalida","-- Error --");
                     ContraseñaTextBox.Clear();
                     ContraseñaTextBox.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Este Usuario no existe en \nla base de datos");
+                MessageBox.Show("Este Usuario no existe en \nla base de datos","-- Busqueda Fallida --");
                 UsuarioTextBox.Clear();
                 ContraseñaTextBox.Clear();
                 UsuarioTextBox.Text = "Usuario";

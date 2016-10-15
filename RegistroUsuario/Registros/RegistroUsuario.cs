@@ -18,8 +18,8 @@ namespace RegistroUsuario
             Utileria v3 = new Utileria(TBPassTextBox, "Ejemplo: juan02", TBConfPassTextBox, "Pass");
             Utileria v4 = new Utileria(TBConfPassTextBox, "Ejemplo: juan02", IdUsuarioTextBox, "Pass");
           // DeshabilitarBotones();
-            Nombre.Parent = Usuario.Parent = Pass.Parent = ConfPass.Parent = Titulo.Parent = CBVerPass.Parent = label2.Parent = label1.Parent = PBFondo;
-            Nombre.BackColor = Usuario.BackColor = Pass.BackColor = ConfPass.BackColor = Titulo.BackColor = CBVerPass.BackColor = label2.BackColor = label1.BackColor = Color.Transparent;
+            //Nombre.Parent = Usuario.Parent = Pass.Parent = ConfPass.Parent = Titulo.Parent = CBVerPass.Parent = label2.Parent = label1.Parent = PBFondo;
+            //Nombre.BackColor = Usuario.BackColor = Pass.BackColor = ConfPass.BackColor = Titulo.BackColor = CBVerPass.BackColor = label2.BackColor = label1.BackColor = Color.Transparent;
         }        
         public void DeshabilitarBotones()
         {
