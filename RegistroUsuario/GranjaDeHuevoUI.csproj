@@ -94,10 +94,10 @@
     <Compile Include="Formularios\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RegistroUsuario.cs">
+    <Compile Include="Registros\RegistroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\RegistroUsuario.Designer.cs">
+    <Compile Include="Registros\RegistroUsuario.Designer.cs">
       <DependentUpon>RegistroUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -115,7 +115,7 @@
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\RegistroUsuario.resx">
+    <EmbeddedResource Include="Registros\RegistroUsuario.resx">
       <DependentUpon>RegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -183,6 +183,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>ProyectoFinalDataBase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\IMG_7130.JPG" />
     <None Include="Resources\Disminuir.png" />
     <None Include="Resources\Aumentar.png" />
     <None Include="Resources\BotonBusqueda.png" />

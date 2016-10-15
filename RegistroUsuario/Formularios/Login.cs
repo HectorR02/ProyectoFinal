@@ -13,9 +13,9 @@ namespace RegistroUsuario.Formularios
             //Temporal
             BLL.UsuariosBLL.Insertar(new Entidades.Usuarios() { UsuarioId = 1, Nombre = "Juan", Usuario = "Asource", Clave = "96321", TipoDeUsuario = "Administrador"});
             BLL.UsuariosBLL.Insertar(new Entidades.Usuarios() { UsuarioId = 2, Nombre = "Juan", Usuario = "juan02", Clave = "12369", TipoDeUsuario = "Vendedor" });
-            label1.Parent = PBFondoLogin;
+            //label1.Parent = PBFondoLogin;
             label1.BackColor = Color.Transparent;
-            CBMostrarContraseña.Parent = PBFondoLogin;
+            //CBMostrarContraseña.Parent = PBFondoLogin;
             CBMostrarContraseña.BackColor = Color.Transparent;            
         }
 
@@ -83,7 +83,17 @@ namespace RegistroUsuario.Formularios
             {
                 if (usuario.Clave.Equals(ContraseñaTextBox.Text))
                 {
-                    MessageBox.Show("Se conecto hehehe");
+                    UsuarioTextBox.Text = "Usuario";
+                    ContraseñaTextBox.PasswordChar = '\0';
+                    ContraseñaTextBox.Text = "Contraseña";
+                    UsuarioTextBox.ForeColor = ContraseñaTextBox.ForeColor = Color.Silver;
+                    //Dispose();
+                    //Close();
+                    Hide();
+                    var inicio = new Inicio(this);
+                    inicio.ShowDialog();
+
+                    //MessageBox.Show("Se conecto hehehe");
                 }
                 else
                 {

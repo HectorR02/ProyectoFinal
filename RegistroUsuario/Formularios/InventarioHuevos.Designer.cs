@@ -97,9 +97,8 @@
             // 
             // InventarioHuevos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(449, 235);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.ClientSize = new System.Drawing.Size(441, 244);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.HuevoIdTextBox1);
@@ -107,7 +106,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ConsultaDataGridView);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(457, 283);
+            this.MinimumSize = new System.Drawing.Size(457, 283);
             this.Name = "InventarioHuevos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InventarioHuevos";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
             this.ResumeLayout(false);
