@@ -46,12 +46,14 @@ namespace RegistroUsuario.Formularios
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                if(string.IsNullOrEmpty(ContraseñaTextBox.Text.Trim()))
+                if (string.IsNullOrEmpty(ContraseñaTextBox.Text.Trim()))
                 {
                     ContraseñaTextBox.PasswordChar = '\0';
                     ContraseñaTextBox.Text = "Contraseña";
                     ContraseñaTextBox.ForeColor = Color.Silver;
                 }
+                else
+                    BIniciarSesion.PerformClick();
             }
             else
                 if(char.IsDigit(e.KeyChar) || char.IsLetter(e.KeyChar))
@@ -87,13 +89,11 @@ namespace RegistroUsuario.Formularios
                     ContraseñaTextBox.PasswordChar = '\0';
                     ContraseñaTextBox.Text = "Contraseña";
                     UsuarioTextBox.ForeColor = ContraseñaTextBox.ForeColor = Color.Silver;
-                    //Dispose();
-                    //Close();
+                    UsuarioTextBox.Focus();
+
                     Hide();
                     var inicio = new Inicio(this);
                     inicio.ShowDialog();
-
-                    //MessageBox.Show("Se conecto hehehe");
                 }
                 else
                 {
