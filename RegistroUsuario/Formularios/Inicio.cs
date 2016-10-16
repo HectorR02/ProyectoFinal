@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using RegistroUsuario.Registros;
+using System.Windows.Forms;
 
 namespace RegistroUsuario.Formularios
 {
@@ -42,6 +43,13 @@ namespace RegistroUsuario.Formularios
             var RegUsuario = new RegistroUsuario();
             RegUsuario.MdiParent = this;
             RegUsuario.Show();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            var RegCliente = new RegistroCliente();
+            RegCliente.MdiParent = this;
+            RegCliente.Show();
         }
     }
 }

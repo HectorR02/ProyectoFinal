@@ -33,14 +33,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.OrganizacionTextBox = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.RepresentanteTextBox = new System.Windows.Forms.TextBox();
+            this.DireccionTextBox = new System.Windows.Forms.TextBox();
+            this.GuardarButton = new System.Windows.Forms.Button();
+            this.NuevoButton = new System.Windows.Forms.Button();
+            this.EliminarButton = new System.Windows.Forms.Button();
+            this.BuscarButton = new System.Windows.Forms.Button();
+            this.TelefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.ClienteIdTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -94,6 +94,7 @@
             // 
             // OrganizacionTextBox
             // 
+            this.OrganizacionTextBox.Enabled = false;
             this.OrganizacionTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OrganizacionTextBox.ForeColor = System.Drawing.Color.Silver;
             this.OrganizacionTextBox.Location = new System.Drawing.Point(70, 168);
@@ -104,115 +105,125 @@
             this.OrganizacionTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.OrganizacionTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // RepresentanteTextBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Silver;
-            this.textBox2.Location = new System.Drawing.Point(70, 252);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(483, 35);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "Ejemplo: Juan Pérez";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.RepresentanteTextBox.Enabled = false;
+            this.RepresentanteTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RepresentanteTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.RepresentanteTextBox.Location = new System.Drawing.Point(70, 252);
+            this.RepresentanteTextBox.Name = "RepresentanteTextBox";
+            this.RepresentanteTextBox.Size = new System.Drawing.Size(483, 35);
+            this.RepresentanteTextBox.TabIndex = 5;
+            this.RepresentanteTextBox.Text = "Ejemplo: Juan Pérez";
+            this.RepresentanteTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.RepresentanteTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            // DireccionTextBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.Silver;
-            this.textBox3.Location = new System.Drawing.Point(70, 336);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(483, 35);
-            this.textBox3.TabIndex = 6;
-            this.textBox3.Text = "Ejemplo: Los Ríos #30, Sto. Dgo.";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.DireccionTextBox.Enabled = false;
+            this.DireccionTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DireccionTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.DireccionTextBox.Location = new System.Drawing.Point(70, 329);
+            this.DireccionTextBox.Multiline = true;
+            this.DireccionTextBox.Name = "DireccionTextBox";
+            this.DireccionTextBox.Size = new System.Drawing.Size(483, 40);
+            this.DireccionTextBox.TabIndex = 6;
+            this.DireccionTextBox.Text = "Ejemplo: Los Ríos #30, Sto. Dgo.";
+            this.DireccionTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.DireccionTextBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // button1
+            // GuardarButton
             // 
-            this.button1.BackColor = System.Drawing.Color.LightGray;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::RegistroUsuario.Properties.Resources.BotonGuardar1;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(224, 499);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 54);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Guardar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
+            this.GuardarButton.AutoSize = true;
+            this.GuardarButton.BackColor = System.Drawing.Color.LightGray;
+            this.GuardarButton.Enabled = false;
+            this.GuardarButton.FlatAppearance.BorderSize = 0;
+            this.GuardarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GuardarButton.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GuardarButton.Image = global::RegistroUsuario.Properties.Resources.BotonGuardar1;
+            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GuardarButton.Location = new System.Drawing.Point(224, 499);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(153, 54);
+            this.GuardarButton.TabIndex = 7;
+            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.GuardarButton.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // NuevoButton
             // 
-            this.button2.BackColor = System.Drawing.Color.LightGray;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::RegistroUsuario.Properties.Resources.BotonAñadir;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(29, 499);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 54);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Nuevo";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
+            this.NuevoButton.BackColor = System.Drawing.Color.LightGray;
+            this.NuevoButton.FlatAppearance.BorderSize = 0;
+            this.NuevoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NuevoButton.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NuevoButton.Image = global::RegistroUsuario.Properties.Resources.BotonAñadir;
+            this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.NuevoButton.Location = new System.Drawing.Point(29, 499);
+            this.NuevoButton.Name = "NuevoButton";
+            this.NuevoButton.Size = new System.Drawing.Size(130, 54);
+            this.NuevoButton.TabIndex = 8;
+            this.NuevoButton.Text = "Nuevo";
+            this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.NuevoButton.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // EliminarButton
             // 
-            this.button3.BackColor = System.Drawing.Color.LightGray;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::RegistroUsuario.Properties.Resources.BotonCancelar;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(446, 499);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(152, 54);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Eliminar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
+            this.EliminarButton.AutoSize = true;
+            this.EliminarButton.BackColor = System.Drawing.Color.LightGray;
+            this.EliminarButton.Enabled = false;
+            this.EliminarButton.FlatAppearance.BorderSize = 0;
+            this.EliminarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EliminarButton.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EliminarButton.Image = global::RegistroUsuario.Properties.Resources.BotonCancelar;
+            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.EliminarButton.Location = new System.Drawing.Point(446, 499);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(152, 54);
+            this.EliminarButton.TabIndex = 9;
+            this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EliminarButton.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // BuscarButton
             // 
-            this.button4.BackColor = System.Drawing.Color.LightGray;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::RegistroUsuario.Properties.Resources.BotonBusqueda;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(420, 74);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(133, 50);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Buscar";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
+            this.BuscarButton.BackColor = System.Drawing.Color.LightGray;
+            this.BuscarButton.FlatAppearance.BorderSize = 0;
+            this.BuscarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BuscarButton.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BuscarButton.Image = global::RegistroUsuario.Properties.Resources.BotonBusqueda;
+            this.BuscarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarButton.Location = new System.Drawing.Point(420, 74);
+            this.BuscarButton.Name = "BuscarButton";
+            this.BuscarButton.Size = new System.Drawing.Size(133, 50);
+            this.BuscarButton.TabIndex = 10;
+            this.BuscarButton.Text = "Buscar";
+            this.BuscarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarButton.UseVisualStyleBackColor = false;
             // 
-            // maskedTextBox1
+            // TelefonoMaskedTextBox
             // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.Silver;
-            this.maskedTextBox1.Location = new System.Drawing.Point(70, 411);
-            this.maskedTextBox1.Mask = "(999) 999-9999";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(483, 35);
-            this.maskedTextBox1.TabIndex = 11;
-            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TelefonoMaskedTextBox.Enabled = false;
+            this.TelefonoMaskedTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TelefonoMaskedTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(70, 411);
+            this.TelefonoMaskedTextBox.Mask = "(999) 999-9999";
+            this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
+            this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(483, 35);
+            this.TelefonoMaskedTextBox.TabIndex = 11;
+            this.TelefonoMaskedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TelefonoMaskedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelefonoMaskedTextBox_KeyPress);
             // 
-            // textBox4
+            // ClienteIdTextBox
             // 
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.Silver;
-            this.textBox4.Location = new System.Drawing.Point(70, 82);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(320, 35);
-            this.textBox4.TabIndex = 13;
-            this.textBox4.Text = "Ejemplo: 0001";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ClienteIdTextBox.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClienteIdTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.ClienteIdTextBox.Location = new System.Drawing.Point(70, 82);
+            this.ClienteIdTextBox.MaxLength = 4;
+            this.ClienteIdTextBox.Name = "ClienteIdTextBox";
+            this.ClienteIdTextBox.Size = new System.Drawing.Size(294, 35);
+            this.ClienteIdTextBox.TabIndex = 13;
+            this.ClienteIdTextBox.Text = "Ejemplo: 0001";
+            this.ClienteIdTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -228,25 +239,27 @@
             // 
             // RegistroCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoSize = true;
             this.BackgroundImage = global::RegistroUsuario.Properties.Resources.IMG_7130;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(624, 579);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.ClienteIdTextBox);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TelefonoMaskedTextBox);
+            this.Controls.Add(this.BuscarButton);
+            this.Controls.Add(this.EliminarButton);
+            this.Controls.Add(this.NuevoButton);
+            this.Controls.Add(this.GuardarButton);
+            this.Controls.Add(this.DireccionTextBox);
+            this.Controls.Add(this.RepresentanteTextBox);
             this.Controls.Add(this.OrganizacionTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(640, 618);
+            this.MinimumSize = new System.Drawing.Size(640, 618);
             this.Name = "RegistroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Cliente";
@@ -262,14 +275,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox OrganizacionTextBox;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox RepresentanteTextBox;
+        private System.Windows.Forms.TextBox DireccionTextBox;
+        private System.Windows.Forms.Button GuardarButton;
+        private System.Windows.Forms.Button NuevoButton;
+        private System.Windows.Forms.Button EliminarButton;
+        private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.MaskedTextBox TelefonoMaskedTextBox;
+        private System.Windows.Forms.TextBox ClienteIdTextBox;
         private System.Windows.Forms.Label label5;
     }
 }

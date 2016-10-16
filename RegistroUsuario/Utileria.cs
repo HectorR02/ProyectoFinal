@@ -8,8 +8,8 @@ namespace RegistroUsuario
     {
         TextBox caja;
         string Texto;
-        TextBox siguiente;
-        public Utileria(TextBox externa, string texto, TextBox sig, string Modo)
+        TextBoxBase siguiente;
+        public Utileria(TextBox externa, string texto, TextBoxBase sig, string Modo)
         {
             caja = externa;
             Texto = texto;
@@ -33,7 +33,7 @@ namespace RegistroUsuario
                     caja.Text = Texto;
                     caja.ForeColor = Color.Silver;
                 }
-                siguiente.Focus();
+                siguiente.Focus();                
             }
             else
                 if (Char.IsDigit(e.KeyChar) || Char.IsLetter(e.KeyChar))

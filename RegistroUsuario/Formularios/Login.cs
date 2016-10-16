@@ -13,9 +13,7 @@ namespace RegistroUsuario.Formularios
             //Temporal
             BLL.UsuariosBLL.Insertar(new Entidades.Usuarios() { UsuarioId = 1, Nombre = "Juan", Usuario = "Asource", Clave = "96321", TipoDeUsuario = "Administrador"});
             BLL.UsuariosBLL.Insertar(new Entidades.Usuarios() { UsuarioId = 2, Nombre = "Juan", Usuario = "juan02", Clave = "12369", TipoDeUsuario = "Vendedor" });
-            //label1.Parent = PBFondoLogin;
             label1.BackColor = Color.Transparent;
-            //CBMostrarContraseña.Parent = PBFondoLogin;
             CBMostrarContraseña.BackColor = Color.Transparent;            
         }
 
@@ -111,6 +109,7 @@ namespace RegistroUsuario.Formularios
                 ContraseñaTextBox.PasswordChar = '\0';
                 ContraseñaTextBox.Text = "Contraseña";
                 ContraseñaTextBox.ForeColor = UsuarioTextBox.ForeColor = Color.Silver;
+                UsuarioTextBox.Focus();
             }
         }
 
