@@ -165,6 +165,7 @@
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NuevoButton.UseVisualStyleBackColor = false;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // EliminarButton
             // 

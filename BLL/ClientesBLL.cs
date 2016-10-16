@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace BLL
 {
@@ -20,9 +21,9 @@ namespace BLL
                     conexion.SaveChanges();
                     resultado = true;
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    throw;
+                    MessageBox.Show(e.ToString());
                 }
             }
             return resultado;
@@ -76,6 +77,23 @@ namespace BLL
                 }
             }
             return lista;
+        }
+
+        public static int UltimoCliente()
+        {
+            int resultado;
+            using(var conexion = new ProyectoFinalDataBase())
+            {
+                try
+                {
+                    resultado = conexion.Cliente.Max(x => x.ClienteId);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+            return resultado;
         }
     }
 }

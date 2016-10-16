@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entidades
 {
@@ -11,8 +12,8 @@ namespace Entidades
 
         public string Representante { get; set; }
 
-        public string Direccion { get; set; }
+        public string Dirección { get; set; }
 
-        public int Teléfono { get; set; }
+        public Int64 Teléfono { get; set; }
     }
 }
