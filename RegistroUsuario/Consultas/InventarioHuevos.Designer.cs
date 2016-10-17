@@ -66,20 +66,24 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.LightGray;
             this.label3.Location = new System.Drawing.Point(8, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 22);
+            this.label3.Size = new System.Drawing.Size(50, 24);
             this.label3.TabIndex = 8;
             this.label3.Text = "Tipo";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.LightGray;
             this.label4.Location = new System.Drawing.Point(193, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 22);
+            this.label4.Size = new System.Drawing.Size(92, 24);
             this.label4.TabIndex = 9;
             this.label4.Text = "Huevo Id";
             // 
@@ -98,6 +102,8 @@
             // InventarioHuevos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.BackgroundImage = global::RegistroUsuario.Properties.Resources.IMG_7130;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(441, 244);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
