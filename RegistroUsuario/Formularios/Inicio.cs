@@ -24,6 +24,7 @@ namespace RegistroUsuario.Formularios
 
         private void inventarioToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
+            CerrarVentanas();
             var inventario = new InventarioHuevos();
             inventario.MdiParent = this;
             inventario.Show();
@@ -40,6 +41,7 @@ namespace RegistroUsuario.Formularios
 
         private void usuariosToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
+            CerrarVentanas();
             var RegUsuario = new RegistroUsuario();
             RegUsuario.MdiParent = this;
             RegUsuario.Show();
@@ -47,9 +49,23 @@ namespace RegistroUsuario.Formularios
 
         private void clientesToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
+            CerrarVentanas();
             var RegCliente = new RegistroCliente();
             RegCliente.MdiParent = this;
             RegCliente.Show();
+        }
+        public void CerrarVentanas()
+        {
+            var activo = this.ActiveMdiChild;
+            if(activo != null)
+                activo.Close();
+        }
+        private void ventasToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            CerrarVentanas();
+            var RegVentas = new RegistroVentas();
+            RegVentas.MdiParent = this;
+            RegVentas.Show();
         }
     }
 }
